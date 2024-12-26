@@ -5239,7 +5239,7 @@ body.rounded-btns .read-more {
   font-size: 1.25rem;
   font-weight: 400;
   display: block;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 /*  End  stats section Rules    */

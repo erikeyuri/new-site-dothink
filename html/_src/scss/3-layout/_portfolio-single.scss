@@ -57,7 +57,7 @@
           display: inline-block;
           font-size: 1.25rem;
           font-weight: 400;
-          text-transform: capitalize;
+          //text-transform: capitalize;
           margin-bottom: 0;
           line-height: 1;
         }
@@ -87,7 +87,7 @@
 
   .main-area {
     .sub-heading {
-      text-transform: capitalize;
+      //text-transform: capitalize;
 
       font-size: 2.25rem;
       font-weight: 600;
@@ -114,7 +114,7 @@
         padding: 0.5rem 1.5rem;
         padding-#{$start-direction}: 0;
         position: relative;
-        text-transform: capitalize;
+        //text-transform: capitalize;
         font-weight: 400;
         font-size: 1rem;
         opacity: 0.85;

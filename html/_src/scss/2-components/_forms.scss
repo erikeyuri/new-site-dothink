@@ -13,7 +13,7 @@
     margin: 0;
     font-size: 1rem;
     font-weight: 600;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     position: absolute;
     #{$start-direction}: 0;
     top: 0px;
@@ -104,7 +104,7 @@
 
   select {
     appearance: none;
-    text-transform: capitalize;
+    //text-transform: capitalize;
   }
 
   textarea {
@@ -256,7 +256,7 @@
     display: inline-block;
     padding: 0;
     margin-bottom: 0;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     color: $clr-white;
   }
   input[type="email"] {
@@ -294,7 +294,7 @@
     opacity: 0.5;
     font-weight: 100;
     font-size: 0.85rem;
-    text-transform: capitalize;
+    //text-transform: capitalize;
   }
 }
 
@@ -307,7 +307,7 @@
     color: $clr-semi-dark-blue;
     border-bottom: 2px solid $clr-main;
     padding-bottom: 0.75rem;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-size: 2rem;
     font-weight: 600;
   }

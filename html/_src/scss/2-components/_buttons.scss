@@ -9,7 +9,7 @@
   align-items: center;
   text-decoration: none !important;
   text-align: center;
-  text-transform: capitalize;
+  //text-transform: capitalize;
   letter-spacing: 1px;
   outline: none;
   border: 2px solid transparent;
@@ -139,7 +139,7 @@
   .play-btn-text {
     position: relative;
     text-align: center;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-weight: 600;
     color: $clr-white;
 
@@ -459,7 +459,7 @@ body {
 }
 
 .read-more {
-  text-transform: capitalize;
+  //text-transform: capitalize;
   color: $clr-main;
   font-weight: 600;
   position: relative;

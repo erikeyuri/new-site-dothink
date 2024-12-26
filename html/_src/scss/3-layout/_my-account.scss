@@ -54,7 +54,7 @@
     margin: 0;
     padding: 0;
     margin-#{$start-direction}: 0.5rem;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     opacity: 0.75;
     font-size: 0.85rem;
     cursor: pointer;
@@ -77,7 +77,7 @@
   padding: 0.5rem 0;
 
   .sign-hint {
-    text-transform: capitalize;
+    //text-transform: capitalize;
     opacity: 0.75;
     margin: 0;
     padding: 0;
@@ -85,7 +85,7 @@
 
   .sign-link {
     text-decoration: none;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     color: $clr-main;
     margin-#{$start-direction}: 5px;
   }
@@ -99,19 +99,19 @@
 
   .reset-link {
     text-decoration: none;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     opacity: 0.75;
   }
 }
 
 .agree-terms {
   .disclaimer {
-    text-transform: capitalize;
+    //text-transform: capitalize;
     color: $clr-dark-grey;
     font-size: 0.85rem;
 
     .rules-link {
-      text-transform: capitalize;
+      //text-transform: capitalize;
       color: $clr-main;
       text-decoration: none;
       margin: 0 5px;
@@ -126,7 +126,7 @@
   background-color: $clr-main;
 
   .hint-text {
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-weight: 500;
     margin: 0;
     color: $clr-white;

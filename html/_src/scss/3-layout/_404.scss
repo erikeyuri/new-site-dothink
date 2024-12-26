@@ -44,7 +44,7 @@
     color: $clr-grey;
     font-size: 4rem;
 
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-weight: 700;
     margin-bottom: 1rem;
 
@@ -56,7 +56,7 @@
   .err-text {
     color: $clr-grey;
     font-size: 1.25rem;
-    text-transform: capitalize;
+    //text-transform: capitalize;
     margin-bottom: 1rem;
 
     @include screen-md {

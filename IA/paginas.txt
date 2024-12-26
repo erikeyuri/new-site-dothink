@@ -1,0 +1,795 @@
+O TEXTO ABAIXO ESTA NO FORMATO MARKDOWN, e retrata as principais páguinas existentes no site da DO THINK:
+
+#PÁGINA PRINCIPAL (https://dothink.com.br/default.html)
+
+### Sobre a Do Think
+A Do Think Soluções Inteligentes é uma empresa brasileira de tecnologia especializada em serviços de consultoria e desenvolvimento de software de gestão de negócios. Desde 2019, a missão da empresa é capacitar seus clientes com ferramentas e conhecimentos necessários para se destacarem em um mercado competitivo. A equipe possui mais de 15 anos de experiência e está sempre em busca das últimas tendências e inovações tecnológicas.
+
+### Serviços Oferecidos
+- **Consultoria Protheus**: Especializada no ERP TOTVS Protheus, oferecendo implantação, sustentação, personalização e auditoria de ambiente.
+- **Fábrica de Software**: Desenvolvimento de sistemas sob medida com metodologia e qualidade, desde a análise até o suporte.
+- **Integrações entre Sistemas**: Integração com VTEX, CAPTR, CABLE BUILDER, DW Força de Vendas e Officefinity.
+- **Implantação de Sistemas**: Protheus ERP - TOTVS, Empressa Digital ERP - Officefinity, Escritório Digital - Officefinity, Sistema de Ponto Eletrônico - Aponta Fácil, Controle de Acesso - SisCard.
+
+### Produtos e Soluções
+- **Software de Gestão**: Soluções para pequenas, médias e grandes empresas, visando criar oportunidades e alcançar melhores resultados.
+- **SIGAACD**: Automação e coleta de dados para melhorar a eficiência operacional.
+
+### Equipe
+A Do Think conta com uma equipe de elite no mercado de TI, composta por profissionais altamente qualificados e experientes. O Centro de Desenvolvimento de Softwares em São Paulo é o coração da inovação, onde são criadas soluções sob medida para impulsionar o crescimento e a eficiência dos negócios dos clientes.
+
+### Blog
+A Do Think mantém um blog atualizado com guias completos e novidades sobre o ERP Protheus, automação no Protheus, programação de impressoras térmicas em ADVPL, inteligência artificial em customizações e integração do Power BI com o ERP.
+
+### Contato
+A empresa oferece canais de contato para dúvidas, suporte e informações adicionais, incluindo um formulário de contato no site.
+
+--------------------------------------------------------------------------------------
+#PÁGINA CONSULTORIA PROTHEUS (https://dothink.com.br/consultoria-protheus.html)
+
+# CONSULTORIA PROTHEUS
+
+```
+Empresa de consultoria no ERP Protheus, que possui experiência e uma equipe de
+profissionais diferenciados, realizando a implantação e sustentação completa do sistema
+Totvs Protheus em sua empresa.
+```
+## O que sua empresa necessita?
+
+Otimize a performance do seu ERP TOTVS® Protheus com personalizações exclusivas para o seu negócio.
+Alinhada às melhores práticas de mercado, com foco na total aderência dos softwares, transformamos dados
+operacionais em informações gerenciais estratégicas para uma tomada de decisão mais segura, ágil e precisa.
+
+### SERVIÇOS OFERECIDOS
+
+Os serviços de consultoria oferecidos pela Do Think baseiam-se nas seguintes premissas:
+
+a. Conhecimento do negócio;
+b. Conhecimento nos processos;
+c. Respeito ao cliente e suas necessidades;
+d. Foco no resultado e na realidade do negócio;
+
+Com os serviços de consultoria da Do Think Soluções Inteligentes , você reduz os riscos de implementação,
+maximiza o retorno do investimento e alcança o sucesso esperado em seus projetos. A Do Think oferece
+uma seleção de serviços completa para sua empresa:
+
+### CONSULTORIA TOTVS PROTHEUS
+
+Atuamos desde a seleção dos módulos que aderem aos processos internos dos clientes, até a implantação
+completa do sistema, ao suporte total pós go-live:
+
+- Levantamento e análise de processos
+- Implantação do ERP
+- Parametrização sistêmica
+- Ciclo de testes e treinamentos
+- Go-live
+- Suporte pós-entrada em produção
+
+### SUPORTE PROTHEUS
+
+Obtenha suporte imediato para solução de problemas críticos, manutenções, atualizações e treinamentos.
+Faça um contrato de acordo com suas necessidades e expectativas:
+
+- Body Shop - Trabalhos sob sua gerência
+- Suporte Remoto - Obtenha suporte imediato
+- Atualização Ambiente Protheus - Mantenha seu ERP sempre atualizado e de acordo com as legislações
+vigentes
+
+
+### FÁBRICA DE SOFTWARE
+
+Nossa fábrica de software produz mais de 4.000 horas/mês:
+
+- Advpl
+- Do Think Design
+- Java
+- .Net
+- PHP
+- Python
+- PL/SQL
+
+### TREINAMENTOS
+
+A Do Think Soluções Inteligentes oferece treinamentos sob medida para sua necessidade conforme sua
+regra de negócios. Venha conhecer nossos treinamentos personalizados.
+
+### AUDITORIA DE AMBIENTE PROTHEUS
+
+Serviço que realiza o mapeamento e auditoria de ambientes no PROTHEUS: Análise de código fonte,
+análise de dicionário e auditoria dos ambientes, analisando os seguintes artefatos:
+
+- Repositório de Objetos (RPO)
+- Códigos Fontes
+- Menus
+- Dicionário de dados (SX ́s)
+
+## Por que a Consultoria Protheus da DO THINK é Essencial
+
+## para o Seu Negócio?
+
+No cenário atual de rápidas mudanças tecnológicas e crescente competitividade, a expansão
+e estruturação eficiente do seu negócio são cruciais. Ao considerar as possibilidades
+oferecidas pelo seu ERP TOTVS Protheus, você se depara com um universo de
+oportunidades:
+
+- Implementação estratégica de novos módulos
+- Customização inteligente de processos
+- Capacitação avançada da sua equipe
+- Suporte especializado e proativo
+- Avaliação de upgrade ou migração de ERP
+- Integração seamless com soluções complementares
+- Atualização de versão otimizada
+
+
+Na DO THINK, entendemos que cada uma dessas possibilidades representa não apenas um
+desafio, mas uma oportunidade de transformação para o seu negócio. Nossa abordagem vai
+além da simples consultoria - oferecemos uma parceria estratégica.
+
+Com mais de 15 anos de experiência dedicada ao TOTVS Protheus, nossa equipe de
+especialistas não apenas compreende as nuances técnicas do sistema, mas também as
+complexidades únicas do seu setor. Isso nos permite oferecer um direcionamento
+verdadeiramente personalizado e estratégico.
+
+Ao escolher a DO THINK como sua parceira em consultoria Protheus, você está optando por:
+
+1. Comprovada: Nossa equipe inclui consultores seniores com décadas de experiência em Protheus.
+2. Soluções Sob Medida: Desenvolvemos estratégias personalizadas que se alinham perfeitamente aos
+    seus objetivos de negócio.
+3. Maximização de ROI: Garantimos que cada investimento em seu ERP gere retornos tangíveis e
+    mensuráveis.
+4. Inovação Contínua: Mantemos você à frente da curva com as mais recentes tendências e melhores
+    práticas em ERP.
+5. Suporte Abrangente: Oferecemos acompanhamento contínuo, desde a implementação até o suporte
+    pós-projeto.
+
+Não arrisque seu investimento em soluções genéricas ou mal direcionadas. Com a DO THINK,
+você tem a garantia de uma consultoria Protheus que não apenas atende às suas
+necessidades atuais, mas também prepara seu negócio para os desafios futuros.
+
+## Entre em Contato
+
+Estamos prontos para ajudar sua empresa a alcançar novos patamares de eficiência e
+produtividade com o TOTVS Protheus. Entre em contato conosco para uma consultoria
+gratuita e descubra como podemos transformar seu negócio.
+
+
+
+----------------------------------------------------------------------------------------
+#PÁGINA PRODUTOS E SERVIÇOS TOTVS PROTHEUS (https://dothink.com.br/produtos-servicos-totvs-protheus.html)
+
+# Transforme sua Gestão Empresarial com a
+
+# Expertise da DO THINK em TOTVS
+
+# Protheus
+
+```
+Consultoria especializada e soluções personalizadas em TOTVS Protheus para otimizar processos,
+aumentar a produtividade e impulsionar o crescimento do seu negócio.
+```
+## Nossos Serviços
+
+### Consultoria Protheus
+
+Nossa equipe de especialistas oferece consultoria personalizada para otimizar o uso do TOTVS Protheus
+em sua empresa. Analisamos seus processos atuais, identificamos oportunidades de melhoria e
+desenvolvemos estratégias para maximizar o retorno sobre o investimento no ERP.
+
+Para empresas que já utilizam o sistema, oferecemos serviços de reimplantação para corrigir problemas e
+melhorar a eficiência.
+
+Atuamos desde a seleção dos módulos que aderem aos processos internos dos clientes, até a implantação
+completa do sistema, ao suporte total pós go-live:
+
+- Levantamento e análise de processos
+- Implantação e reimplantação do ERP
+- Parametrização sistêmica
+- Ciclo de testes e treinamentos
+- Go-live
+- Suporte pós-entrada em produção
+[Saiba mais]
+
+### Atualização de Versão TOTVS Protheus
+
+Mantenha seu sistema sempre atualizado com as últimas funcionalidades e correções de segurança. Nossa
+equipe gerencia todo o processo de atualização, minimizando o impacto nas operações diárias e
+garantindo uma transição suave.
+
+[Saiba mais]
+
+### Personalização / Customizações ADVPL
+
+Desenvolvemos soluções personalizadas em ADVPL para atender às necessidades específicas do seu
+negócio. Nossas customizações são projetadas para integrar-se perfeitamente ao TOTVS Protheus,
+ampliando suas funcionalidades e adaptando-o ao seu fluxo de trabalho único.
+
+[Saiba mais]
+
+### Automação e Coleta de Dados (SIGAACD)
+
+Implementamos soluções de automação e coleta de dados utilizando o módulo SIGAACD do TOTVS
+Protheus. Isso permite uma gestão mais eficiente de estoques, logística e produção, reduzindo erros e
+aumentando a produtividade.
+
+[Saiba mais]
+
+### Integração entre Sistemas (API)
+
+
+Desenvolvemos integrações robustas entre o TOTVS Protheus e outros sistemas utilizados em sua
+empresa. Nossas soluções de API garantem a sincronização de dados em tempo real, eliminando silos de
+informação e proporcionando uma visão unificada do negócio.
+
+[Saiba mais]
+
+## Benefícios de trabalhar com a DO THINK
+
+### Integração de Processos
+
+#### Unificamos todos os departamentos da sua empresa em uma única plataforma, eliminando
+
+#### redundâncias e melhorando a comunicação interna.
+
+### Automação de Tarefas
+
+#### Implementamos workflows inteligentes que automatizam tarefas repetitivas, liberando sua
+
+#### equipe para focar em atividades estratégicas.
+
+### Visibilidade e Controle
+
+#### Oferecemos dashboards personalizados e relatórios em tempo real, proporcionando uma
+
+#### visão clara e abrangente de todas as operações da empresa.
+
+### Aumento da Produtividade
+
+#### Nossas soluções otimizam processos e reduzem o tempo gasto em tarefas administrativas,
+
+#### aumentando significativamente a produtividade da sua equipe.
+
+### Melhoria no Atendimento ao Cliente
+
+#### Com informações centralizadas e de fácil acesso, sua equipe pode oferecer um atendimento
+
+#### mais rápido e eficiente aos clientes.
+
+### Redução de Custos
+
+#### A otimização de processos e a eliminação de redundâncias resultam em uma significativa
+
+#### redução de custos operacionais.
+
+### Aumento da Competitividade
+
+#### Com processos mais eficientes e informações precisas, sua empresa estará melhor
+
+#### posicionada para competir no mercado e aproveitar novas oportunidades.
+
+## Por que escolher a DO THINK?
+
+### Equipe Altamente Especializada
+
+#### Nossa equipe é composta por profissionais certificados e com vasta experiência em TOTVS
+
+#### Protheus. Estamos constantemente atualizados com as últimas tendências e melhores
+
+#### práticas do mercado.
+
+### Mais de 15 Anos de Experiência no Mercado
+
+#### Com mais de uma década e meia de atuação, acumulamos um profundo conhecimento sobre
+
+#### os desafios e oportunidades em diversos setores da indústria.
+
+
+### Atendimento Personalizado
+
+#### Entendemos que cada empresa é única. Por isso, oferecemos um atendimento totalmente
+
+#### personalizado, adaptando nossas soluções às necessidades específicas de cada cliente.
+
+### Soluções sob Medida
+
+#### Não acreditamos em soluções "tamanho único". Desenvolvemos e implementamos soluções
+
+#### customizadas que se alinham perfeitamente aos objetivos e processos de cada cliente.
+
+## Entre em Contato
+
+#### Estamos prontos para ajudar sua empresa a alcançar novos patamares de eficiência e
+
+#### produtividade com o TOTVS Protheus. Entre em contato conosco para uma consultoria
+
+#### gratuita e descubra como podemos transformar seu negócio.
+
+
+
+-----------------------------------------------------------------
+#PÁGINA FÁBRICA DE SOFTWARE (https://dothink.com.br/fabrica-de-software.html)
+# FÁBRICA DE SOFTWARE DO THINK
+
+```
+Desenvolva sistemas sob medida para sua empresa com metodologia e qualidade.
+Fabricamos sua solução, desde a análise , desenvolvimento , implantação e suporte.
+```
+## Transformando Ideias em Soluções Digitais
+
+A Do Think Soluções Inteligentes oferece serviços de fábrica de software de alta
+qualidade, desenvolvendo sistemas sob medida para impulsionar o crescimento e a eficiência do seu
+negócio.
+
+```
+FALE CONOSCO FAQS
+```
+## Nossa Abordagem
+
+Combinamos expertise técnica, metodologias ágeis e foco no cliente para entregar soluções que atendam às
+suas necessidades específicas:
+
+1. Análise de Requisitos: Compreendemos profundamente suas necessidades de negócio.
+2. Planejamento Estratégico: Definimos a melhor abordagem técnica e cronograma.
+3. Desenvolvimento Ágil: Utilizamos Scrum para entregas rápidas e flexíveis.
+4. Testes Rigorosos: Garantimos a qualidade e confiabilidade do software.
+5. Implementação Suave: Asseguramos uma transição tranquila para o novo sistema.
+6. Suporte Contínuo: Oferecemos manutenção e atualizações constantes.
+
+## Por Que Escolher a Do Think?
+
+- Expertise Técnica: Nossa equipe domina as mais recentes tecnologias e melhores práticas de
+desenvolvimento.
+- Foco em Resultados: Comprometidos em entregar soluções que geram valor real para seu negócio.
+- Flexibilidade: Adaptamos nossos processos às suas necessidades específicas.
+- Transparência: Comunicação clara e constante durante todo o projeto.
+- Inovação Contínua: Sempre buscando as melhores soluções tecnológicas para seu negócio.
+
+## TIPO DE PROJETOS
+
+- Projeto Completo – Desenvolvimento de ponta a ponta de projetos, incluindo sua sustentação e
+qualidade.
+- Fábrica de Sustentação – Acompanhamento, monitoramento e implementação de melhorias de
+tecnologias existentes na sua companhia.
+- Fábrica de Qualidade – Teste completo das suas soluções, garantindo o funcionamento pleno e
+eliminando riscos.
+
+## AMBIENTE DE DESENVOLVIMENTO
+
+- Advpl
+- Java
+- .Net
+- PHP
+- Python
+- PL/SQL
+
+
+- Power BI
+
+SOLUÇÕES EMPRESARIAIS
+
+- TOTVS
+- SAP B
+- Officefinity
+
+## VANTAGENS
+
+- Acompanhe todos os projetos com facilidade: Possuímos ferramentas que fornecem visão em tempo
+real com status do andamento do projeto;
+- Flexibilidade:Adaptamos as melhores práticas às culturas e políticas da sua Cia;
+- Temos experiência em projetos globais;
+- Expertise em diferentes linguagens de programação;
+- Qualidade assegurada através das mais modernas ferramentas e metodologias de teste;
+- Conhecimento e experiência em diversos setores do mercado.
+
+## Nossos Serviços
+
+Desenvolvimento de Software Customizado
+
+Criamos soluções sob medida que atendem às necessidades únicas do seu negócio, desde aplicativos móveis
+até sistemas empresariais complexos.
+
+Integração de Sistemas
+
+Conectamos seus sistemas existentes para criar um ecossistema digital coeso e eficiente, maximizando o
+ROI de seus investimentos em TI.
+
+Modernização de Aplicações
+
+Atualizamos sistemas legados para tecnologias modernas, melhorando performance, segurança e
+usabilidade.
+
+Consultoria em Arquitetura de Software
+
+Oferecemos orientação especializada para projetar sistemas escaláveis, seguros e de alto desempenho.
+
+## Tecnologias
+
+Dominamos uma ampla gama de tecnologias para atender às suas necessidades:
+
+- Linguagens: Advpl, Java, Python, JavaScript, C#, PHP
+- Frameworks: Spring, React, Angular, .NET
+- Bancos de Dados: Oracle, SQL Server, MongoDB, PostgreSQL
+- Cloud: AWS, Azure, Google Cloud
+- DevOps: Docker, Kubernetes, Jenkins
+
+## Metodologia Ágil
+
+Utilizamos o Scrum para garantir:
+
+- Entregas frequentes e incrementais
+
+
+- Adaptabilidade a mudanças
+- Transparência no processo de desenvolvimento
+- Colaboração próxima com o cliente
+
+## Segurança e Conformidade
+
+Priorizamos a segurança dos seus dados e a conformidade com regulamentações:
+
+- Práticas de desenvolvimento seguro (OWASP)
+- Conformidade com LGPD, GDPR e outras regulamentações relevantes
+- Testes de segurança e auditorias regulares
+
+## Benefícios da Fábrica de Software
+
+1. Redução de Custos: Otimize seus investimentos em TI.
+2. Aumento da Produtividade: Automatize processos e elimine ineficiências.
+3. Vantagem Competitiva: Inove mais rápido que seus concorrentes.
+4. Escalabilidade: Cresça seu negócio com soluções que acompanham seu ritmo.
+5. Foco no Core Business: Concentre-se no que faz de melhor, deixando o desenvolvimento de software
+    conosco.
+
+## Processo de Engajamento
+
+1. Consulta Inicial: Entendemos suas necessidades e objetivos.
+2. Proposta Detalhada: Apresentamos um plano de ação personalizado.
+3. Alinhamento de Expectativas: Definimos KPIs e marcos do projeto.
+4. Kickoff do Projeto: Iniciamos o desenvolvimento com sprints planejadas.
+5. Entregas e Feedbacks: Mantemos você envolvido em cada etapa.
+6. Lançamento e Suporte: Garantimos uma implementação suave e suporte contínuo.
+
+## Compromisso com a Qualidade
+
+Nossa busca pela excelência é refletida em nossos processos:
+
+- Revisões de código regulares
+- Testes automatizados abrangentes
+- Integração e entrega contínuas (CI/CD)
+- Monitoramento de performance em tempo real
+
+## Inovação e Pesquisa
+
+Investimos continuamente em P&D para manter-nos na vanguarda da tecnologia:
+
+- Participação em conferências e workshops
+- Parcerias com instituições acadêmicas
+- Programas internos de inovação e hackathons
+
+
+## Entre em Contato
+
+Estamos prontos para transformar suas ideias em realidade digital. Entre em contato para uma consulta
+gratuita e descubra como podemos impulsionar seu negócio com soluções de software personalizadas.
+
+```
+FALE CONOSCO
+```
+## DÚVIDAS? FALE COM UM DE NOSSOS ESPECIALISTAS!
+
+```
+Somos uma empresa de desenvolvimento, suporte e soluções em Software de Gestão Empresarial com a
+missão de trazer resultados efetivos para o seu negócio.
+```
+## Perguntas Frequentes (FAQ) - Fábrica de Software Do
+
+## Think
+
+### 1. O que é uma fábrica de software e como ela difere de uma empresa de
+
+### desenvolvimento de software tradicional?
+
+Uma fábrica de software é uma abordagem estruturada e sistemática para o desenvolvimento de software,
+que aplica princípios de produção industrial ao processo de criação de software. Diferentemente de uma
+empresa de desenvolvimento tradicional, uma fábrica de software:
+
+- Utiliza processos padronizados e repetíveis
+- Foca na eficiência e escalabilidade da produção
+- Oferece maior previsibilidade em termos de prazos e custos
+- Geralmente trabalha com múltiplos projetos simultaneamente
+- Possui equipes especializadas em diferentes aspectos do desenvolvimento
+Na Do Think, combinamos a eficiência da fábrica de software com a flexibilidade necessária para atender às
+necessidades específicas de cada cliente.
+
+### 2. Quais são as principais vantagens de contratar uma fábrica de software
+
+### como a Do Think?
+
+As principais vantagens incluem:
+
+- Redução de custos operacionais
+- Acesso a uma equipe especializada sem necessidade de contratação interna
+- Maior velocidade no desenvolvimento e entrega de projetos
+- Flexibilidade para escalar recursos conforme a demanda
+- Foco no core business da sua empresa, enquanto nós cuidamos do desenvolvimento
+- Utilização das mais recentes tecnologias e melhores práticas do mercado
+- Maior previsibilidade de custos e prazos
+
+### 3. Como a Do Think garante a qualidade do software desenvolvido?
+
+Garantimos a qualidade através de:
+
+- Metodologias ágeis como Scrum e Kanban
+- Processos rigorosos de revisão de código
+
+
+- Testes automatizados e manuais em todas as fases do desenvolvimento
+- Integração e entrega contínuas (CI/CD)
+- Equipe altamente qualificada e constantemente atualizada
+- Uso de ferramentas de análise estática de código
+- Auditorias de qualidade regulares
+- Feedback constante do cliente durante o processo de desenvolvimento
+
+### 4. Qual é o processo típico de desenvolvimento de um projeto na Do Think?
+
+Nosso processo típico inclui as seguintes etapas:
+
+1. Levantamento de requisitos e análise de negócio
+2. Planejamento e arquitetura da solução
+3. Design de interface do usuário (se aplicável)
+4. Desenvolvimento iterativo em sprints
+5. Testes contínuos (unitários, integração, sistema, aceitação)
+6. Implantação e go-live
+7. Suporte pós-lançamento e manutenção
+
+Adaptamos esse processo conforme as necessidades específicas de cada projeto.
+
+### 5. A Do Think trabalha com projetos de todos os tamanhos ou apenas
+
+### grandes implementações?
+
+Trabalhamos com projetos de todos os tamanhos, desde pequenas aplicações até grandes sistemas
+empresariais. Nossa estrutura flexível nos permite adaptar nossa abordagem para atender às necessidades de
+startups, pequenas e médias empresas, bem como grandes corporações.
+
+### 6. Como a Do Think lida com a segurança e a confidencialidade dos dados
+
+### dos clientes?
+
+Levamos a segurança e confidencialidade muito a sério. Nossas práticas incluem:
+
+- Acordos de confidencialidade (NDAs) com todos os clientes
+- Políticas rigorosas de segurança da informação
+- Acesso restrito e controlado aos dados dos clientes
+- Criptografia de dados sensíveis
+- Treinamento regular da equipe em práticas de segurança
+- Auditorias de segurança periódicas
+- Conformidade com regulamentações como LGPD e GDPR (quando aplicável)
+
+### 7. Quais tecnologias e linguagens de programação a Do Think utiliza?
+
+Temos experiência em uma ampla gama de tecnologias, incluindo mas não se limitando a:
+
+- Linguagens: ADVPL, Java, .NET, Python, JavaScript, PHP
+- Frameworks: Spring, React, Angular, Vue.js, Laravel
+- Bancos de dados: Oracle, SQL Server, MySQL, PostgreSQL, MongoDB
+- Cloud: AWS, Azure, Google Cloud
+
+
+- Mobile: React Native, Flutter, iOS (Swift), Android (Kotlin)
+- DevOps: Docker, Kubernetes, Jenkins, GitLab CI
+Estamos sempre atualizando nossas competências para incluir as tecnologias mais recentes e relevantes do
+mercado.
+
+### 8. Como a Do Think gerencia projetos com prazos apertados ou requisitos
+
+### em constante mudança?
+
+Utilizamos metodologias ágeis que nos permitem:
+
+- Priorizar funcionalidades críticas para entrega rápida
+- Adaptar-nos rapidamente a mudanças nos requisitos
+- Manter comunicação constante com o cliente
+- Realizar entregas incrementais para feedback rápido
+- Escalar a equipe conforme necessário para atender prazos
+Além disso, nossa experiência nos permite antecipar desafios comuns e planejar de forma eficiente.
+
+### 9. A Do Think oferece suporte e manutenção após a entrega do projeto?
+
+Sim, oferecemos diversos níveis de suporte e manutenção pós-entrega, incluindo:
+
+- Correção de bugs
+- Atualizações de segurança
+- Suporte técnico
+- Monitoramento de performance
+- Treinamento para a equipe do cliente
+Os termos específicos do suporte são definidos de acordo com as necessidades de cada cliente.
+
+
+-----------------------------------------------------------------
+#PÁGINA SIGAACD (https://dothink.com.br/automacao-e-coleta-de-dados-protheus.html)
+# AUTOMAÇÃO E COLETA DE DADOS
+
+**Automação e Coleta de Dados (SIGAACD)** é uma solução TOTVS que atua nos processos de **recebimento
+de materiais** , **movimentação de estoques** , **produção** , **expedição de materiais** e **inventário** , permitindo a
+utilização de coletores de rádio frequência, microterminais, balanças e impressora térmicas, tornando assim
+os processos de armazenagem e controle mais rápido e confiável.
+
+```
+FALE CONOSCO
+```
+## SIGAACD
+
+O **SIGAACD** tem o objetivo agilizar o processo de coleta de dados através de equipamentos portáteis,
+utilizando o recurso de identificação de código de barras.
+
+A **Do Think** é **expert em toda solução de automação** da TOTVS, e também com sua experiência, fornece
+outras ferramentas e facilitadores que acoplados a solução padrão da TOTVS irá proporcionar a sua
+empresa maiores resultados em menor tempo.
+
+### Sua busca por agilidade, precisão e controle total na gestão de estoque termina aqui!
+
+Com o **SIGAACD** (Sistema Integrado de Gestão de Armazéns e Coleta de Dados) do TOTVS Protheus, você
+integra e automatiza todos os processos do seu armazém, desde o recebimento até a expedição,
+eliminando gargalos e potencializando seus resultados.
+
+**Imagine:**
+
+- Eliminar erros manuais e retrabalhos com a coleta de dados automatizada.
+- Ter acesso a informações em tempo real para tomada de decisões estratégicas.
+- Otimizar o espaço físico do seu armazém e reduzir custos com estoque.
+- Aumentar a produtividade da sua equipe e a satisfação dos seus clientes.
+Com o **SIGAACD** Protheus, tudo isso é possível!
+
+## PROCESSOS DO SIGAACD
+
+- Recebimento de Materiais;
+- Movimentação de Estoques;
+- Produção;
+- Expedição de Materiais;
+- Inventário
+
+## BENEFÍCIOS
+
+- Eficiência na gestão do estoque e armazenagem de mercadorias;
+- Agilidade no o processo utilizando equipamentos, coletores de rádio frequência e microterminais;
+- Confiabilidade nas informações, através da utilização de códigos de barras e de dispositivos de coleta de
+dados(Coletores de Rádio Frequência e Microterminais);
+- Permite a automação do recebimento e movimentação interna de materiais, inventário, produção e
+expedição.
+
+## SERVIÇOS OFERECIDOS
+
+- Consultoria em processos;
+- Implantação padrão ACD;
+- Desenvolvimento fábrica de software e melhorias;
+
+
+
+
+
+-----------------------------------------------------------------
+#PÁGINA ATUALIZAÇÃO DE VERSÃO PROTHEUS (https://dothink.com.br/atualizacao-de-versao-totvs-protheus.html)
+# Atualização de Versão TOTVS Protheus:
+
+# Impulsione seu Negócio com a DO THINK
+
+```
+A atualização de versão do TOTVS Protheus realizada pela DO THINK é um catalisador para o crescimento
+e a eficiência do seu negócio. Ao implementar as mais recentes funcionalidades e otimizações do sistema,
+sua empresa experimenta um salto significativo em produtividade, com processos mais ágeis e
+automatizados. A conformidade legal atualizada reduz riscos operacionais, enquanto novas integrações
+abrem portas para expansão de mercado e melhor atendimento ao cliente.
+```
+## Mantenha-se à Frente da Concorrência com a Versão
+
+## Mais Recente do TOTVS Protheus
+
+No dinâmico mundo dos negócios, ficar para trás não é uma opção. A atualização de versão do seu ERP
+TOTVS Protheus é mais do que uma simples manutenção técnica - é um investimento estratégico no futuro
+da sua empresa. Na DO THINK, somos especialistas em transformar esse processo em uma oportunidade
+de crescimento e inovação para o seu negócio.
+
+## Por que Atualizar seu TOTVS Protheus?
+
+1. **Aumento de Produtividade:** Novas versões trazem melhorias significativas na interface e
+    usabilidade, permitindo que sua equipe trabalhe de forma mais eficiente.
+2. **Conformidade Legal:** Mantenha-se atualizado com as últimas exigências fiscais e legais, evitando
+    riscos de não conformidade.
+3. **Novas Funcionalidades:** Acesse recursos inovadores que podem revolucionar seus processos
+    internos e oferecer vantagens competitivas.
+4. **Segurança Aprimorada:** Proteja seus dados críticos com as mais recentes atualizações de
+    segurança.
+5. **Integração Avançada:** Aproveite melhorias na capacidade de integração com outras ferramentas e
+    sistemas.
+6. **Suporte Otimizado:** Garanta o suporte contínuo da TOTVS e evite problemas com versões
+    obsoletas.
+
+## Nossa Abordagem para Atualização de Versão
+
+Na DO THINK, entendemos que cada empresa é única. Nossa metodologia de atualização é
+cuidadosamente personalizada para atender às necessidades específicas do seu negócio:
+
+### 1. Análise Detalhada
+
+Realizamos um diagnóstico completo do seu ambiente atual, identificando customizações, integrações e
+processos críticos.
+
+### 2. Planejamento Estratégico
+
+Desenvolvemos um plano de atualização detalhado, minimizando riscos e garantindo uma transição suave.
+
+### 3. Ambiente de Testes
+
+Criamos um ambiente de testes robusto para validar todas as funcionalidades antes da implementação
+final.
+
+### 4. Migração de Dados
+
+Executamos a migração de dados com precisão, garantindo a integridade e segurança das suas
+informações.
+
+### 5. Customizações e Integrações
+
+
+Adaptamos suas customizações e integrações existentes para a nova versão, preservando funcionalidades
+essenciais.
+
+### 6. Treinamento Especializado
+
+Oferecemos treinamento abrangente para sua equipe, garantindo a adoção eficaz das novas
+funcionalidades.
+
+### 7. Go-Live e Suporte
+
+Gerenciamos cuidadosamente o processo de go-live e fornecemos suporte dedicado pós-atualização.
+
+## Por que Escolher a DO THINK para sua Atualização de Versão?
+
+- **Expertise Comprovada:** Com mais de 15 anos de experiência em TOTVS Protheus, nossa equipe domina
+todas as nuances do processo de atualização.
+- **Abordagem Personalizada:** Desenvolvemos estratégias sob medida que se alinham perfeitamente aos
+objetivos do seu negócio.
+- **Minimização de Riscos:** Nossa metodologia rigorosa garante uma atualização suave, com mínimo
+impacto nas operações diárias.
+- **Otimização de Desempenho:** Não apenas atualizamos seu sistema, mas também otimizamos seu
+desempenho para máxima eficiência.
+- **Suporte Contínuo:** Oferecemos acompanhamento pós-atualização para garantir que você aproveite ao
+máximo os novos recursos.
+
+## Pronto para Impulsionar seu Negócio?
+
+Não deixe seu ERP ficar para trás. A atualização de versão do TOTVS Protheus com a DO THINK é o
+caminho para desbloquear todo o potencial do seu negócio.
+
+```
+FALE CONOSCO
+```
+## Perguntas Frequentes
+
+**P: Quanto tempo leva para atualizar o TOTVS Protheus?** R: O tempo de atualização varia dependendo da
+complexidade do seu ambiente. Tipicamente, o processo pode levar de 1 a 8 semanas. Após nossa análise
+inicial, forneceremos um cronograma detalhado.
+
+**P: A atualização afetará nossas operações diárias?** R: Nossa metodologia é projetada para minimizar
+interrupções. Realizamos a maior parte do trabalho em ambientes de teste e programamos a atualização
+final para períodos de baixo movimento, geralmente nos fins de semana.
+
+**P: E quanto às nossas customizações existentes?** R: Preservar suas customizações é uma prioridade.
+Nossa equipe analisa cuidadosamente todas as customizações, adaptando-as para a nova versão e,
+quando possível, sugerindo melhorias utilizando as novas funcionalidades nativas.
+
+
+-----------------------------------------------------------------
+#PÁGINA DE BLOGS
+1. Conectando o Power BI ao seu ERP: Desbravando Caminhos para a Inteligência de Negócios
+	Jul, 2024 (https://dothink.com.br/202407-conectando-o-power-bi-ao-seu-erp-protheus.html)
+2. Revolucionando o ERP TOTVS Protheus: O Poder da Inteligência Artificial em Customizações pela DO THINK
+	Ago, 2024 (https://dothink.com.br/202408-ia-totvs-protheus-customizacoes-erp.html)
+3. Dominando a Programação de Impressoras Térmicas em ADVPL: Guia Avançado para Etiquetas de Código de Barras
+	Set, 2024 (https://dothink.com.br/202410-programacao-impressoras-termicas-protheus.html)
+4. Descubra as Novidades do Protheus 12.1.2410 com a DO THINK
+	Out, 2024 (https://dothink.com.br/protheus-12-1-2410.html)
+5. VT100 em ADVPL: Guia Completo para Dominar a Automação no Protheus
+	Nov, 2024 (https://dothink.com.br/202411-vt100-protheus-desenvolvimento.html)
+6. Mestre de Inventário no ERP Protheus: Guia Completo
+	Dez, 2024 (https://dothink.com.br/202412-mestre-inventario-erp-protheus-guia-completo.html)

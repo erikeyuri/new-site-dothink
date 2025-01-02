@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+	<title>VT100 em ADVPL: Guia Completo para Dominar a Automação no Protheus</title>
+	<meta name="description" content="Domine VT100 em ADVPL para Protheus com este guia completo. Aprenda técnicas de automação e coleta de dados com a expertise da DOTHINK em consultoria e desenvolvimento ADVPL.">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name=author content="Do Think Soluções Inteligentes "/>
+	<meta name=Language content="pt-br"/>
+	<meta name=Copyright content="Do Think Soluções Inteligentes "/>
+	<meta name=Designer content="Do Think Soluções Inteligentes "/>
+	<meta name=Publisher content="Do Think Soluções Inteligentes "/>
+	<meta name=Geography content="Av. Brigadeiro Faria Lima, 2369,Conj. 1102 Jardim Paulistano"/>
+	<meta name=zipcode content="01452-000"/>
+	<meta name=city content="São Paulo"/>
+	<meta name=country content="Brasil"/>
+	<meta name=googlebot content="index, follow"/>
+	<meta property=og:url content="https://dothink.com.br/202411-vt100-protheus-desenvolvimento.html"/>
+	<meta property=og:title content="VT100 em ADVPL: Guia Completo para Dominar a Automação no Protheus"/>
+	<meta property=og:site_name content="Do Think Soluções Inteligentes"/>
+	<meta property=og:description content="Empresa de consultoria no ERP Protheus, que possui experiência e uma equipe de profissionais diferenciados, realizando a implantação e sustentação completa do sistema Totvs Protheus em sua empresa."/>
+	<meta property=og:image content="https://dothink.com.br/assets/images/blog/post-images/vt100-advpl-protheus.webp"/>
+	<meta property=og:image:type content="image/webp"/>
+	<meta property=og:type content=website />
+	<meta property=article:publisher content="https://www.facebook.com/people/Do-Think-Solu%C3%A7%C3%B5es-Inteligentes/61561498754254/"/>
+	<meta name=twitter:card content="summary"/>
+	<meta name="twitter:description" content="Aprenda VT100 em ADVPL para Protheus neste guia completo. Domine automação e coleta de dados com expertise da DOTHINK em consultoria e fábrica de software ADVPL. Otimize seus processos hoje!">
+	<meta name="twitter:title" content="VT100 em ADVPL: Guia de Automação no Protheus | DOTHINK">
+	<meta name=twitter:domain content="Do Think Soluções Inteligentes"/>
+	<meta name=twitter:image:src content="https://dothink.com.br/assets/images/blog/post-images/vt100-advpl-protheus.webp"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script type=application/ld+json>
+		{
+		  "@context" : "http://schema.org",
+		  "@type" : "LocalBusiness",
+		  "name" : "Do Think Soluções Inteligentes ",
+		  "image" : "https://dothink.com.br/assets/images/blog/post-images/vt100-advpl-protheus.webp",
+		  "address" : {
+			"@type" : "PostalAddress",
+			"streetAddress" : "Av. Brigadeiro Faria Lima, 2369",
+			"addressLocality" : "São Paulo",
+			"addressRegion" : "SP"
+		  },
+		  "url" : "https://dothink.com.br/202411-vt100-protheus-desenvolvimento.html"
+		}
+		</script>
+        
+        <!-- fav icon -->
+        <link rel="icon" href="assets/images/fav-icon/dothink_icon.png">
+        
+        <!-- bootstarp -->
+        <link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+        
+        <!-- animate.css file -->
+        <link rel="stylesheet" href="css/vendors/animate.css">
+        
+        <!-- flaticon -->
+        <link rel="stylesheet" href="css/vendors/flaticon/flaticon.css">
+        
+        <!-- fontAwesome -->
+        <link rel="stylesheet" href="css/vendors/all.min.css">
+        
+        <!-- bootstrap icons -->
+        <link rel="stylesheet" href="css/vendors/bootstrap-icons-1.9.1/bootstrap-icons.css">
+        
+        <!-- Font Family -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
+        
+        <!-- main-LTR -->
+        <link rel="stylesheet" href="css/main-LTR.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77223718-1"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+        <style>
+         .code-container {
+         position: relative;
+         background: #4b4b4b;
+         padding: 0.5em;
+         border-radius: 8px;
+         margin-bottom: 1em;
+         }
+         .code-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 0.5em;
+         }
+         .code-header h6 {
+         color: #fff;
+         margin: 0;
+         }
+         .copy-button {
+         background: #3e9ef8;
+         color: #fff;
+         border: none;
+         padding: 0.5em 1em;
+         border-radius: 5px;
+         cursor: pointer;
+         }
+         .copy-button:focus {
+         outline: none;
+         }
+         .copy-button.copied {
+         background: #19bc9c;
+         }
+         /* Customizing Prism.js colors */
+         .token.comment {
+         color: #6a9955; /* Green */
+         }
+         .token.string {
+         color: #ce9178; /* Light red */        
+         }
+         .token.keyword {
+         color: #047dbe; /* Blue */
+         font-weight: bold;
+         }
+         .token.operator {
+         color: #d4d4d4; /* Light gray */
+         }
+         .token.number {
+         color: #b5cea8; /* Light green */
+         }
+         .token.identifier {
+         color: #9cdcfe; /* Light blue */
+         }
+          table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin-bottom: 1em;
+          border-radius: 10px;
+          overflow: hidden;
+          }
+          th, td {
+          border: 1px solid #333;
+          padding: 8px;
+          text-align: left;
+          color: #f3f3f3;
+          }
+          th {
+          background-color: #1e1e1e;
+          }
+          td {
+          background-color: #2d2d2d;
+          }
+          tbody tr:nth-child(odd) td {
+          background-color: #505050;
+          }
+          tbody tr:hover td {
+          background-color: #3a3a3a;
+          }
+          .inner-table {
+          background-color: #959494;
+          border-radius: 10px;
+          margin: 10px;
+          overflow: hidden;
+          }
+          .inner-table th, .inner-table td {
+          border: 1px solid #444;
+          background-color: #2d2d2d;
+          }
+       </style>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+      </head>
+  <body class=" dark-theme ">
+    <!--Start Page Header-->
+    <header class=" page-header   header-basic" id="page-header">
+      <div class="header-search-box">
+        <div class="close-search"></div>
+        <form class="nav-search search-form" role="search" method="get" action="#">
+          <div class="search-wrapper"> 
+            <label class="search-lbl">Para Pesquisar:</label>
+            <input class="search-input" type="search" placeholder="Pesquise..." name="searchInput" autofocus="autofocus"/>
+            <button class="search-btn" type="submit"><i class="bi bi-search icon"></i></button>
+          </div>
+        </form>
+      </div>
+      <div class="container">
+        <nav class="menu-navbar">
+          <div class="header-logo"><a class="logo-link" href="https://dothink.com.br"><img class="logo-img light-logo" loading="lazy" src="assets/images/logo/logo-light.png" alt="logo"/><img class="logo-img  dark-logo" loading="lazy" src="assets/images/logo/logo-dark.png" alt="logo"/></a></div>
+          <div class="links menu-wrapper ">
+            <ul class="list-js links-list">
+              <li class="menu-item"><a class="menu-link   active" href="https://dothink.com.br">Principal </a></li>
+              <li class="menu-item"><a class="menu-link  " href="about-us.html">Sobre Nós </a></li>
+              <li class="menu-item has-sub-menu"><a class="menu-link  " href="#0">Serviços<i class="fas fa-plus  plus-icon"> </i></a>
+                <ul class="sub-menu ">
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="consultoria-protheus.html">Consultoria Protheus</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="service-single.html">service single</a></li>
+                </ul>
+              </li>
+              <li class="menu-item has-sub-menu"><a class="menu-link  " href="#0">Portfolio <i class="fas fa-plus  plus-icon"> </i></a>
+                <ul class="sub-menu ">
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="portfolio-grid.html">portfolio grid</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="portfolio-slider.html">portfolio slider</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="portfolio-single.html">portfolio single</a></li>
+                </ul>
+              </li>
+              <li class="menu-item has-sub-menu"><a class="menu-link  " href="#0">Blog<i class="fas fa-plus  plus-icon"> </i></a>
+                <ul class="sub-menu ">
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="blog-home-1-col.html">blog home 1 colmun</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="blog-home-2-col.html">blog home 2 columns</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="blog-home-3-col.html">blog home 3 columns</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="post-single.html">single post</a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a class="menu-link  " href="fale-conosco.html">Fale Conosco </a></li>
+            </ul>
+          </div>
+          <div class="controls-box">
+            <!--Menu Toggler button-->
+            <div class="control  menu-toggler"><span></span><span></span><span></span></div>
+            <!--search Icon button-->
+            <div class="control header-search-btn"><i class="bi bi-search icon"></i></div>
+            <!--Dark/Light mode button-->
+            <div class="mode-switcher ">
+              <div class="switch-inner go-light " title="Switch To Light Mode "><i class="bi bi-sun icon "></i></div>
+              <div class="switch-inner go-dark" title="Switch To Dark Mode "><i class="bi bi-moon icon "></i></div>
+            </div>
+            <!--mini shoping cart-->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--End Page Header-->
+    <!-- Start _post -->
+    <div class="blog blog-post ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <!--post heading area2021-->
+            <div class="social"> 
+              <div class="share-us ">
+                <h6 class="share-title">compartilhar postagem:</h6>
+                <div class="sc-wrapper dir-row sc-flat">
+                  <ul class="sc-list">
+                    <li class="sc-item " title="Facebook"><a class="sc-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dothink.com.br/202411-vt100-protheus-desenvolvimento.html" target="_blank" title="social media icon"><i class="fab fa-facebook-f sc-icon"></i></a></li>
+                    <li class="sc-item " title="linkedin"><a class="sc-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.dothink.com.br/202411-vt100-protheus-desenvolvimento.html" title="social media icon"><i class="fab fa-linkedin sc-icon"></i></a></li>
+                    <li class="sc-item " title="instagram"><a class="sc-link" href="https://www.instagram.com/dothink_erp/?igsh=Z2hmeGsxZTI0NHE5" title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
+                    <li class="sc-item " title="X"><a class="sc-link" href="https://twitter.com/intent/tweet?url=https://www.dothink.com.br/202411-vt100-protheus-desenvolvimento.html" title="social media icon"><i class="fab fa-x-twitter sc-icon"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h1 class="post-title">VT100 em ADVPL: Guia Completo para Dominar a Automação no Protheus</h1>
+            <div class="post-img-wrapper post-featured-area"><img class="featured-img" loading="lazy" src="assets/images/blog/post-images/vt100-advpl-protheus.webp" alt="Mestre de Inventário"></div>
+          </div>
+          <div class="col-12 col-lg-9 mx-auto">
+            <div class="post-main-area">
+              <div class="post-info"><a class="info post-cat" href="#"><i class="fas fa-list-alt icon"></i>SIGAACD</a><a class="info post-author" href="#"><i class="fas fa-user icon"></i>Erike Yuri</a><a class="info post-date" href="#"><i class="fas fa-history icon"></i>10/11/2024</a></div>
+              <div class="post-content">
+                <p class=" first-litter post-text">A programação para coletores de dados VT100 refere-se ao desenvolvimento de software para dispositivos que utilizam o protocolo de terminal VT100, amplamente usado em sistemas de automação e coleta de dados, especialmente em ambientes corporativos que utilizam o ERP TOTVS Protheus.</p>
+                <h2 class="post-heading" id="introducao-vt100">Introdução</h2>
+                <!--div class="post-img-wrapper"><img loading="lazy" src="assets/images/blog/post-images/post-img.jpg" alt="post image"></div-->
+                <p class="post-text">No universo do desenvolvimento ADVPL para TOTVS Protheus, a programação VT100 representa uma ferramenta essencial para criação de interfaces e automação de processos em ambientes de terminal. Este guia definitivo mergulhará profundamente no mundo das funções VT100, oferecendo aos programadores uma compreensão abrangente e prática desta tecnologia fundamental.</p>
+                
+                <h2 class="post-heading" id="o-que-e-vt100">O que é VT100?</h2>
+                <p class="post-text">VT100 é um padrão de terminal desenvolvido originalmente pela Digital Equipment Corporation (DEC) que se tornou um modelo de referência para comunicação e interface em sistemas de terminais. No contexto do Protheus, as funções VT100 permitem a criação de interfaces de usuário em ambientes de texto, especialmente para dispositivos móveis e coletores de dados.</p>
+                <h5 id="historico-vt100">Histórico de Desenvolvimento</h5> 
+                <p class="post-text">A implementação das funções VT100 no Protheus tem uma história interessante. Segundo informações do documento original, Alexandro Valário desempenhou um papel crucial no desenvolvimento dessas bibliotecas. Na época, a Microsiga (atual TOTVS) buscava soluções para equipamentos de mobilidade que atendessem suas necessidades específicas.</p>               
+                <h2 class="post-heading" id="fundamentos-tecnicos">Fundamentos Técnicos</h2>
+                <h5 id="conceitos-basico-vt100">Conceitos Básicos de VT100</h5>
+                
+                <p class="post-text">VT100 opera em um ambiente de texto puro, onde cada caractere na tela é representado por uma posição específica. As coordenadas são definidas por linhas (vertical) e colunas (horizontal), começando do canto superior esquerdo (0,0).</p>
+                <h5 id="conceitos-basico-vt100">Bibliotecas e Funções Disponíveis</h5>
+                <p class="post-text">As principais bibliotecas para programação VT100 no Protheus estão contidas no arquivo <span class="featured-text">apvt100.ch</span>. Este header file deve ser incluído em todos os programas que utilizam funções VT100:</p>
+                <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code1')">Copiar</button>
+                  </div>
+                  <pre><code id="code1" class="language-advpl">#INCLUDE "APVT100.CH"</code></pre>
+               </div>
+               <br>
+
+               <h4 id="vtmodelo">Modelos de Terminal</h4>
+               <p class="post-text">Existem três principais modelos de terminal suportados:</p>
+               <menu>
+                  <li>MT16 (16 teclas)</li>
+                  <li>MT44 (44 teclas)</li>
+                  <li>RF (Rádio Frequência)</li>
+               </menu>
+               <h2 id="funcoes-vt100">Funções Principais VT100: Referência Definitiva</h2>
+               <br>
+               <h5 id="idindice">Índice de Funções VT100</h5>
+               <ol>
+                  <li><a href="#vtsay">VTSay</a></li>
+                  <li><a href="#vtget">VTGet</a></li>
+                  <li><a href="#vtread">VTRead</a></li>
+                  <li><a href="#vtinkey">VTInkey()</a></li>
+                  <li><a href="#vtlastkey">VTLastKey()</a></li>
+                  <li><a href="#vtalert">VTAlert()</a></li>
+                  <li><a href="#vtyesno">VTYesNo()</a></li>
+                  <li><a href="#vtachoice">VTAchoice()</a></li>
+                  <li><a href="#vtabrowse">VTAbrowse()</a></li>
+                  <li><a href="#vtdbbrowse">VTDBBrowse()</a></li>
+                  <li><a href="#vtclear">VTClear()</a></li>
+                  <li><a href="#vtsave">VTSave()</a></li>
+                  <li><a href="#vtrestore">VTRestore()</a></li>
+                  <li><a href="#vtmaxrow-vtmaxcol">VTMaxRow()</a></li>
+                  <li><a href="#vtmaxrow-vtmaxcol">VTMaxCol()</a></li>
+                  <li><a href="#vtsetsize">VTSetSize()</a></li>                           
+                  <li><a href="#vtbeep">VTBeep()</a></li>
+                  <li><a href="#vtreverso">VTReverso()</a></li>
+                  <li><a href="#vtkeyboard">VTKeyBoard()</a></li>
+                  <li><a href="#vtmodelo">VTModelo()</a></li>
+                  <li><a href="#vtclearbuffer">VTClearBuffer()</a></li>
+               </ol>
+                <h5 id="iddicas">Boas Práticas</h5>
+                <ol>
+                    <li><a href="#boas-praticas">Dicas de Otimização</a></li>
+                    <li><a href="#padroes-desenvolvimento">Padrões de Desenvolvimento</a></li>
+                    <li><a href="#armadilhas-comuns">Armadilhas Comuns a Evitar</a></li>                                                     
+                </ol>
+                <h5>Casos de Uso Avançados</h5>
+                <ol>
+                    <li><a href="#exemplo-completo-aplicacao">Exemplo Completo de Aplicação</a></li>
+                </ol>
+
+               <h3 id="vtsay">1. VTSay - Exibição de Dados</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Exibe dados em coordenadas específicas da tela.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>@ &lt;nLinha&gt;, &lt;nColuna&gt; VTSAY &lt;Expressão&gt; [PICTURE &lt;Mascara&gt;]</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nLinha</strong></td>
+                        <td width="519">Número da linha (0 a VTMAXROW())</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nColuna</strong></td>
+                        <td width="519">Número da coluna (0 a VTMAXCOL())</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>Expressão</strong></td>
+                        <td width="519">Conteúdo a ser exibido</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>Mascara</strong></td>
+                        <td width="519">Formatação opcional</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTSay</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code3')">Copiar</button>
+                  </div>
+                  <pre><code id="code3" class="language-advpl">nQtd := 15.45
+@ 1, 0 VTSAY "Quantidade: " + Transform(nQtd, "@E 999.99")</code></pre>
+               </div>
+
+               <h3 id="vtget">2. VTGet - Entrada de Dados</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Permite a entrada interativa de dados pelo usuário.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>@ &lt;nLinha&gt;, &lt;nColuna&gt; VTGET &lt;variavel&gt; [PICTURE &lt;Mascara&gt;] [VALID &lt;Validacao&gt;] [F3 &lt;Consulta&gt;]</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nLinha</strong></td>
+                        <td width="519">Número da linha (0 a VTMAXROW())</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nColuna</strong></td>
+                        <td width="519">Número da coluna (0 a VTMAXCOL())</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>variavel</strong></td>
+                        <td width="519">Variável que receberá o valor</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>Mascara</strong></td>
+                        <td width="519">Formatação opcional</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>Validacao</strong></td>
+                        <td width="519">Expressão de validação</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>Consulta</strong></td>
+                        <td width="519">Código da consulta padrão (F3)</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTGet</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code4')">Copiar</button>
+                  </div>
+                  <pre><code id="code4" class="language-advpl">cCodigo := Space(6)
+@ 0, 0 VTSAY "Código: "
+@ 0, 8 VTGET cCodigo PICTURE "@!" VALID !Empty(cCodigo)</code></pre>
+               </div>
+               <h3 id="vtread">3. VTRead - Ativação de Gets</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Ativa a edição em tela usando objetos VTGet.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTREAD</code></pre>
+               <br>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTRead</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code5')">Copiar</button>
+                  </div>
+                  <pre><code id="code5" class="language-advpl">cNome := Space(30)
+cCPF := Space(11)
+
+@ 1, 1 VTSAY "Nome:" VTGET cNome
+@ 2, 1 VTSAY "CPF: " VTGET cCPF PICTURE "@R 999.999.999-99"
+
+VTREAD</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Essencial para processar múltiplos campos de entrada em uma única tela.</p>
+
+               <h3 id="vtinkey">4. VTInkey() - Captura de Teclas</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Extrai um caractere do buffer de teclado.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nTecla := VTInkey([nSegundos])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nSegundos</strong></td>
+                        <td width="519">Tempo de espera (opcional)</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTInkey</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code6')">Copiar</button>
+                  </div>
+                  <pre><code id="code6" class="language-advpl">While .T.
+nTecla := VTInkey(1)
+If nTecla == 27  // ESC
+Exit
+EndIf
+EndDo</code></pre>
+               </div>
+
+               <h3 id="vtlastkey">5. VTLastKey() - Última Tecla Pressionada</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Retorna o código da última tecla pressionada.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nUltimaTecla := VTLastKey()</code></pre>
+               <br>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTLastKey</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code7')">Copiar</button>
+                  </div>
+                  <pre><code id="code7" class="language-advpl">If VTLastKey() == 27  // ESC
+VTAlert("Operação cancelada")
+Return
+EndIf</code></pre>
+               </div>
+
+               <h3 id="vtalert">6. VTAlert() - Mensagens de Alerta</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Exibe mensagens rápidas para o usuário.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+                <pre><code>VTAlert(&lt;cMensagem&gt;, [&lt;cTitulo&gt;], [&lt;lCentralizado&gt;], [nTempo], [nBeep])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>cMensagem</strong></td>
+                        <td width="519">Texto da mensagem</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>cTitulo</strong></td>
+                        <td width="519">Título do alerta (opcional)</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>lCentralizado</strong></td>
+                        <td width="519">Se verdadeiro, centraliza a mensagem</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTempo</strong></td>
+                        <td width="519">Tempo de exibição em milissegundos</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBeep</strong></td>
+                        <td width="519">Número de beeps</td>
+                     </tr>                                                                                                                                    
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTAlert</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code8')">Copiar</button>
+                  </div>
+                  <pre><code id="code8" class="language-advpl">VTAlert("Produto não cadastrado", "Aviso", .T., 2000, 1)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Ideal para feedback rápido ao usuário em operações de validação ou confirmação.</p>
+               <br>
+               <h3 id="vtyesno">7. VTYesNo() - Confirmação de Ações</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Solicita confirmação do usuário.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>lConfirmacao := VTYesNo(&lt;cMensagem&gt;, [&lt;cTitulo&gt;], [&lt;lCentralizado&gt;])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>cMensagem</strong></td>
+                        <td width="519">Texto da mensagem</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>cTitulo</strong></td>
+                        <td width="519">Título do alerta (opcional)</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>lCentralizado</strong></td>
+                        <td width="519">Se verdadeiro, centraliza a mensagem</td>
+                     </tr>                                                                                                                                    
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTYesNo</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code9')">Copiar</button>
+                  </div>
+                  <pre><code id="code9" class="language-advpl">If VTYesNo("Confirma a exclusão?", "Atenção", .T.)
+// Procede com a exclusão
+Else
+VTAlert("Operação cancelada")
+EndIf</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Essencial para operações críticas que requerem confirmação do usuário.</p>
+               <br>
+               <h3 id="vtachoice">8. VTAchoice() - Criação de Menus</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Permite criar menus interativos.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nOpcao := VTACHOICE(&lt;nTopo&gt;, &lt;nEsquerda&gt;, &lt;nBase&gt;, &lt;nDireita&gt;, &lt;aOpcoes&gt;, [&lt;aSelecao&gt;], [&lt;cFuncaoUsuario&gt;],[&lt;nItemInicial&gt;], [lNaoBranco], [&lt;lMsg&gt;], [&lt;nLinhaJanela&gt;],[&lt;lScroll&gt;])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTopo, nEsquerda</strong></td>
+                        <td width="519">Coordenadas do canto superior esquerdo da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBase, nDireita</strong></td>
+                        <td width="519">Coordenadas do canto inferior direito da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>aOpcoes</strong></td>
+                        <td width="519">Array com as opções do menu</td>
+                     </tr> 
+                     <tr>
+                        <td width="103"><strong>aSelecao</strong></td>
+                        <td width="519">Array de itens selecionáveis (opcional)</td>
+                     </tr>  
+                     <tr>
+                        <td width="103"><strong>cFuncaoUsuario</strong></td>
+                        <td width="519">Função de controle personalizada. É o nome de uma função definida pelo usuário que é executada quando uma tecla não reconhecível for pressionada.  O nome da  função é especificado como uma expressão caractere sem parênteses ou  argumentos.  Note que o comportamento de VTACHOICE() é afetado pela    presença deste argumento.</td>
+                     </tr>   
+                     <tr>
+                        <td width="103"><strong>nItemInicial</strong></td>
+                        <td width="519">posição ocupada no vetor de &lt;aOpcoes&gt; pelo item que aparecer  em destaque quando o menu for exibido pela primeira  vez.  Caso você especifique um item de menu que não esteja disponível,  ou caso você não use argumento algum, o item que aparecer  em destaque   será  o primeiro item selecionável do vetor.</td>
+                     </tr> 
+                     <tr>
+                        <td width="103"><strong>lNaoBranco</strong></td>
+                        <td width="519">Se for verdadeiro a opções do menu será montado conforme o tamanho da opção desconsiderando os espaços em branco à direita e esquerda. Caso seja negativa ou omitida a opção do menu será montado conforme a dimensão da tela do VTACHOICE definida em &lt;nEsquerda&gt; e &lt;nDireita&gt;.</td>
+                     </tr> 
+                     <tr>
+                        <td width="103"><strong>lMsg</strong></td>
+                        <td width="519">Conteúdo tem que ser NIL, parâmetro reservado para implementação  futura.</td>
+                     </tr>   
+                     <tr>
+                        <td width="103"><strong>nLinhaJanela</strong></td>
+                        <td width="519">É o número da linha da janela na qual o item de menu inicial aparecerá.</td>
+                     </tr>                                                                                                                                                                                                                                                                                                                                     
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTAchoice</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code12')">Copiar</button>
+                  </div>
+                  <pre><code id="code12" class="language-advpl">aOpcoes := {"Incluir", "Alterar", "Excluir", "Visualizar"}
+
+// Monta a tela
+@0,0 VTSAY "Opcoes:"
+
+// Monta a lista de opcoes
+While nMenu < 0
+nMenu := VTAChoice( 2, 0, VTMaxRow(), VTMaxCol(), aOpcoes, , "ACDV311VLD", nMenu )
+End</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Perfeito para criação de menus principais ou submenus em aplicações.</p>
+               <p>Modos de VTACHOICE():</p>
+               <ul>
+                <li>0 = Inativo;</li>
+                <li>1 = Tentativa de passar início da lista;</li>
+                <li>2 = Tentativa de passar final da lista;</li>
+                <li>3 = Normal;</li>
+                <li>4 = Itens não selecionados.</li>
+               </ul>
+               <br>
+               <h3 id="vtabrowse">9. VTAbrowse() - Browse de Arrays</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Cria um browse baseado em um array.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nPos := VTAbrowse(&lt;nTopo&gt;, &lt;nEsquerda&gt;, &lt;nBase&gt;, &lt;nDireita&gt;, &lt;aCabecalho&gt;, &lt;aItens&gt;, &lt;aTamanhos&gt;, [&lt;cFuncaoUsuario&gt;])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTopo, nEsquerda</strong></td>
+                        <td width="519">Coordenadas do canto superior esquerdo da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBase, nDireita</strong></td>
+                        <td width="519">Coordenadas do canto inferior direito da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>aCabecalho</strong></td>
+                        <td width="519">Array que contem os títulos das colunas</td>
+                     </tr> 
+                     <tr>
+                        <td width="103"><strong>aItens</strong></td>
+                        <td width="519">Array que contem os dados a serem mostrados</td>
+                     </tr>  
+                     <tr>
+                        <td width="103"><strong>aTamanhos</strong></td>
+                        <td width="519">Array que contem o tamanho de cada coluna</td>
+                     </tr>   
+                     <tr>
+                        <td width="103"><strong>cFuncaoUsuario</strong></td>
+                        <td width="519">Nome de uma função definida pelo usuário que é executada quando uma tecla não reconhecível for pressionada.  O nome da  função é especificado como uma expressão caractere sem parênteses ou  argumentos.  Note que o comportamento de VTABROWSE() é afetado pela presença deste argumento.</td>
+                     </tr>                                                                                                                                    
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTAbrowse</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code13')">Copiar</button>
+                  </div>
+                  <pre><code id="code13" class="language-advpl">aCab      := {"Código", "Descrição", "Valor"}
+aItens    := {{"001", "Produto A", 100.00}, {"002", "Produto B", 150.00}}
+aTam      := {10, 20, 10}
+
+nPos      := VTAbrowse(0, 0, 10, 40, aCab, aItens, aTam)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Ideal para exibição de listas de dados em formato tabular.</p>
+               <p>Modos de VTABROWSE():</p>
+               <ul>
+                <li>0 = Inativo;</li>
+                <li>1 = Tentativa de passar início da lista;</li>
+                <li>2 = Tentativa de passar final da lista;</li>
+                <li>3 = Normal;</li>
+                <li>4 = Itens não selecionados.</li>
+               </ul>
+               <br>
+               <p>Valores de Retorno da Função de Controle de VTABROWSE():</p>
+               <ul>
+                <li>0 = Aborta seleção;</li>
+                <li>1 = Executa seleção;</li>
+                <li>2 = Continua VTABROWSE();</li>
+                <li>3 = Vai para o próximo item cuja primeira letra for a tecla pressionada.</li>
+               </ul>
+               <br>
+               <h3 id="vtdbbrowse">10. VTDBBrowse() - Browse de Banco de Dados</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Cria um browse baseado em uma tabela do banco de dados.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nRecno := VTDBBrowse(&lt;nTopo&gt;, &lt;nEsquerda&gt;, &lt;nBase&gt;, &lt;nDireita&gt;, &lt;cAlias&gt;, &lt;aCampos&gt;, &lt;aTamanhos&gt;, [&lt;cFuncaoUsuario&gt;], [&lt;cTop&gt;], [&lt;cBottom&gt;])</code></pre>
+               <br>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTopo, nEsquerda</strong></td>
+                        <td width="519">Coordenadas do canto superior esquerdo da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBase, nDireita</strong></td>
+                        <td width="519">Coordenadas do canto inferior direito da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>cAlias</strong></td>
+                        <td width="519">Alias da tabela</td>
+                     </tr> 
+                     <tr>
+                        <td width="103"><strong>aCampos</strong></td>
+                        <td width="519">Array com os campos a serem exibidos</td>
+                     </tr>  
+                     <tr>
+                        <td width="103"><strong>aTamanhos</strong></td>
+                        <td width="519">Array com larguras das colunas</td>
+                     </tr>   
+                     <tr>
+                        <td width="103"><strong>cFuncaoUsuario</strong></td>
+                        <td width="519">Nome de uma função definida pelo usuário que é executada quando uma tecla não reconhecível for pressionada.  O nome da  função é especificado como uma expressão caractere sem parênteses ou  argumentos.  Note que o comportamento de VTDBBROWSE () é afetado pela presença deste argumento</td>
+                     </tr>   
+                     <tr>
+                        <td width="103"><strong>cTop</strong></td>
+                        <td width="519">String com a condição de validação de top</td>
+                     </tr>  
+                     <tr>
+                        <td width="103"><strong>cBottom</strong></td>
+                        <td width="519">String com a condição de validação de Bottom</td>
+                     </tr>                                                                                                                                                                                                     
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTDBBrowse</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code14')">Copiar</button>
+                  </div>
+                  <pre><code id="code14" class="language-advpl">aCampos     := {"B1_COD", "B1_DESC", "B1_PRV1"}
+aTamanhos   := {15, 30, 10}
+
+nRecno      := VTDBBrowse(0, 0, 10, 60, "SB1", aCampos, aTamanhos)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Essencial para navegação e seleção de registros em tabelas do Protheus.</p>
+
+               <p><strong>Retorno:</strong></p>
+               <menu>
+                <li>VTDBBROWSE () retorna o recno()</li>
+                <li>Se o processo de seleção for interrompido, VTDBBROWSE () retorna zero.</li>
+               </menu>
+               <br>
+               <p>Modos de VTDBBROWSE():</p>
+               <ul>
+                <li>0 = Inativo;</li>
+                <li>1 = Tentativa de passar início da lista;</li>
+                <li>2 = Tentativa de passar final da lista;</li>
+                <li>3 = Normal;</li>
+                <li>4 = Itens não selecionados.</li>
+               </ul>
+               <br>
+               <p>Valores de Retorno da Função de Controle de VTDBBROWSE():</p>
+               <ul>
+                <li>0 = Aborta seleção;</li>
+                <li>1 = Executa seleção;</li>
+                <li>2 = Continua VTABROWSE();</li>
+                <li>3 = Vai para o próximo item cuja primeira letra for a tecla pressionada.</li>
+               </ul>
+               <br>
+               <br>
+               <h3 id="vtclear">11. VTClear() - Limpeza de Tela</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Limpa a tela do terminal.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VtClear()</code></pre>
+               <br>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VtClear</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code15')">Copiar</button>
+                  </div>
+                  <pre><code id="code15" class="language-advpl">VTClear()
+@ 0, 0 VTSAY "Nova Tela"</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Utilizado para limpar a tela antes de apresentar novas informações.</p>
+               <br>
+
+               <h3 id="vtsave">12. VTSave() - Salvamento de Tela</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Permite salvar o conteúdo da tela para restaurar posteriormente</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>aTela := VTSave(&lt;nTopo&gt;, &lt;nEsquerda&gt;, &lt;nBase&gt;,&lt;nDireita&gt;)</code></pre>
+               <br> 
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTopo, nEsquerda</strong></td>
+                        <td width="519">Coordenadas do canto superior esquerdo da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBase, nDireita</strong></td>
+                        <td width="519">Coordenadas do canto inferior direito da janela</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTSave</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code16')">Copiar</button>
+                  </div>
+                  <pre><code id="code16" class="language-advpl">aTela := VTSave(0, 0, 5, 20)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Útil para criar janelas temporárias ou preservar partes da tela durante operações.</p>
+               <br>
+               <br>
+
+               <h3 id="vtrestore">13. VTRestore() - Restauração de Tela</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Permite restaurá o conteúdo da tela salvo por VTSave()</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTRestore(&lt;nTopo&gt;, &lt;nEsquerda&gt;, &lt;nBase&gt;,&lt;nDireita&gt;, aTela)</code></pre>
+               <br> 
+               <table>
+                  <tbody>
+                     <tr>
+                        <td width="103"><strong>Parâmetros</strong></td>
+                        <td width="519"><strong>Descrição</strong></td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nTopo, nEsquerda</strong></td>
+                        <td width="519">Coordenadas do canto superior esquerdo da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>nBase, nDireita</strong></td>
+                        <td width="519">Coordenadas do canto inferior direito da janela</td>
+                     </tr>
+                     <tr>
+                        <td width="103"><strong>aTela</strong></td>
+                        <td width="519">Possui o conteúdo da tela a ser exibida</td>
+                     </tr>                                 
+                  </tbody>
+               </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTRestore</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code17')">Copiar</button>
+                  </div>
+                  <pre><code id="code17" class="language-advpl">aTela := VTSave(0, 0, 5, 20)
+
+// Realiza operações na tela
+VTRestore(0, 0, 5, 20, aTela)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Útil para criar janelas temporárias ou preservar partes da tela durante operações.</p>
+               <br>
+               <br>
+               <h3 id="vtmaxrow-vtmaxcol">14. VTMaxRow() e VTMaxCol() - Dimensões da Tela</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Retornam as dimensões máximas da tela.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>nMaxLinha := VTMaxRow()
+nMaxColuna := VTMaxCol()</code></pre>
+               <br>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTMaxRow()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code18')">Copiar</button>
+                  </div>
+                  <pre><code id="code18" class="language-advpl">@ VTMaxRow(), 0 VTSAY "Rodapé da Tela"</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Essencial para criar layouts adaptáveis a diferentes tamanhos de tela.</p>
+               <br>
+               <br>
+               <h3 id="vtsetsize">15. VTSetSize() - Dimensões da Tela</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Seta o limite da área de trabalho.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTSETSIZE(&lt;nLin&gt;, &lt;nCol&gt;) </code></pre>
+               <br>
+               <table>
+                <tbody>
+                   <tr>
+                      <td width="103"><strong>Parâmetros</strong></td>
+                      <td width="519"><strong>Descrição</strong></td>
+                   </tr>
+                   <tr>
+                      <td width="103"><strong>nLin, nCol</strong></td>
+                      <td width="519">São as coordenadas máximas de linha e coluna.</td>
+                   </tr>                                 
+                </tbody>
+             </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTSetSize()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code19')">Copiar</button>
+                  </div>
+                  <pre><code id="code19" class="language-advpl">VTSetSize(8, 20)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Essencial para criar layouts adaptáveis a diferentes tamanhos de tela.</p>
+               <br>
+               <br>
+               <h3 id="vtbeep">16. VTBeep() - Emissão de Som</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Emite um beep sonoro.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTBeep([nQuantidade])</code></pre>
+               <br>
+               <table>
+                <tbody>
+                   <tr>
+                      <td width="103"><strong>Parâmetros</strong></td>
+                      <td width="519"><strong>Descrição</strong></td>
+                   </tr>
+                   <tr>
+                      <td width="103"><strong>nQuantidade</strong></td>
+                      <td width="519">Especifica a quantidade de beep que será emitido.  Caso &lt;nQtde&gt; seja omitido, VTBEEP() emitira um beep.</td>
+                   </tr>                                 
+                </tbody>
+             </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTBeep()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code20')">Copiar</button>
+                  </div>
+                  <pre><code id="code20" class="language-advpl">VTBeep(3)  // Emite 3 beeps</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Útil para alertas sonoros em situações críticas ou para chamar atenção do usuário.</p>
+               <br>
+               <br>
+               <h3 id="vtreverso">17. VTReverso() - Modo Reverso</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Ativa ou desativa o modo reverso da tela.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTReverso([lAtiva])</code></pre>
+               <br>
+               <table>
+                <tbody>
+                   <tr>
+                      <td width="103"><strong>Parâmetros</strong></td>
+                      <td width="519"><strong>Descrição</strong></td>
+                   </tr>
+                   <tr>
+                      <td width="103"><strong>lAtiva</strong></td>
+                      <td width="519">Se verdadeiro ativa, falso desativa o modo de tela.  Caso &lt;lRev&gt; seja omitido, VTReverso() retorna o modo atual.</td>
+                   </tr>                                 
+                </tbody>
+             </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTReverso()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code21')">Copiar</button>
+                  </div>
+                  <pre><code id="code21" class="language-advpl">VTReverso(.T.)
+@ 1, 1 VTSAY "Texto em Reverso"
+VTReverso(.F.)</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Utilizado para destacar informações importantes na tela.</p>
+               <br>
+               <br>
+               <h3 id="vtkeyboard">18. VTKeyBoard() - Simulação de Teclado</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Coloca uma string no buffer de teclado.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTKeyBoard(&lt;cString&gt;)</code></pre>
+               <br>
+               <table>
+                <tbody>
+                   <tr>
+                      <td width="103"><strong>Parâmetros</strong></td>
+                      <td width="519"><strong>Descrição</strong></td>
+                   </tr>
+                   <tr>
+                      <td width="103"><strong>cString</strong></td>
+                      <td width="519">Conjunto de caracteres a ser colocado no buffer de teclado.</td>
+                   </tr>                                 
+                </tbody>
+             </table>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTKeyBoard()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code22')">Copiar</button>
+                  </div>
+                  <pre><code id="code22" class="language-advpl">VTKeyBoard( Chr(13) )  // Simula pressionar ENTER</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Útil para automação de testes ou preenchimento automático de campos.</p>
+               <br>
+               <br>
+               <h3 id="vtclearbuffer">19. VTClearBuffer() - Limpa o buffer de teclado</h3>
+               <p><strong><em>Objetivo:</em></strong></p>
+               <p>Limpa o buffer de teclado.</p>
+               <p><strong><em>Sintaxe:</em></strong></p>
+               <pre><code>VTClearBuffer()</code></pre>
+               <br>
+               <div class="code-container">
+                  <div class="code-header">
+                     <h6>Sintaxe Advpl VTClearBuffer()</h6>
+                     <button class="copy-button" onclick="copyCode(this, 'code23')">Copiar</button>
+                  </div>
+                  <pre><code id="code23" class="language-advpl">VTCLEARBUFFER()</code></pre>
+               </div>
+               <p><strong>Caso de uso:</strong> Útil para o conteúdo que possa ter ficado.</p>
+               <br>
+               <br>
+               <h2 id="boas-praticas">Boas Práticas</h2>
+               <h3 id="dicas-otimizacao">Dicas de Otimização</h3>
+               <ol>
+                   <li><strong>Uso eficiente de VTClear():</strong> Sempre use VTClear() antes de criar novas telas para evitar sobreposição de informações.</li>
+                   <div class="code-container">
+                       <div class="code-header">
+                          <h6>advpl</h6>
+                          <button class="copy-button" onclick="copyCode(this, 'code25')">Copiar</button>
+                       </div>
+                       <pre><code id="code25" class="language-advpl">VTClear()
+@ 0, 0 VTSAY "Nova Tela Limpa"</code></pre>
+                    </div>
+                    <li><strong>Definição da Área de Trabalho:</strong> Utilize VTSetSize() para definir a área de trabalho adequada ao dispositivo.</li>
+                    <div class="code-container">
+                       <div class="code-header">
+                          <h6>advpl</h6>
+                          <button class="copy-button" onclick="copyCode(this, 'code26')">Copiar</button>
+                       </div>
+                       <pre><code id="code26" class="language-advpl">VTSetSize(8, 40)  // 8 linhas, 40 colunas</code></pre>
+                    </div>  
+                    <li><strong>Tratamento de Teclas de Saída:</strong> Sempre trate teclas de saída com VTLastKey() para permitir que o usuário cancele operações.</li>
+                    <div class="code-container">
+                       <div class="code-header">
+                          <h6>advpl</h6>
+                          <button class="copy-button" onclick="copyCode(this, 'code27')">Copiar</button>
+                       </div>
+                       <pre><code id="code27" class="language-advpl">If VTLastKey() == 27  // ESC
+Return
+EndIf</code></pre>
+                    </div>   
+                    <li><strong>Uso de Variáveis Locais:</strong> Prefira variáveis locais para melhor performance e gestão de memória.</li>
+                    <div class="code-container">
+                       <div class="code-header">
+                          <h6>advpl</h6>
+                          <button class="copy-button" onclick="copyCode(this, 'code28')">Copiar</button>
+                       </div>
+                       <pre><code id="code28" class="language-advpl">Local cNome := Space(30)
+Local nIdade := 0</code></pre>
+                    </div>
+                    <li><strong>Validações Eficientes:</strong> Implemente validações concisas e eficientes em VTGets.</li>
+                    <div class="code-container">
+                       <div class="code-header">
+                          <h6>advpl</h6>
+                          <button class="copy-button" onclick="copyCode(this, 'code29')">Copiar</button>
+                       </div>
+                       <pre><code id="code29" class="language-advpl">@ 1, 1 VTGET cCPF PICTURE "@R 999.999.999-99" VALID CGC(cCPF)</code></pre>
+                    </div>                                                                                                
+               </ol>
+              <br>
+              <br>
+              <h3 id="padroes-desenvolvimento">Padrões de Desenvolvimento</h3>
+              <ol>
+                  <li><strong>Nomenclatura Consistente:</strong> Use prefixos para identificar tipos de variáveis (c para caractere, n para numérico, etc.).</li>
+                  <li><strong>Comentários Descritivos:</strong> Adicione comentários explicativos, especialmente em lógicas complexas.</li>
+                  <li><strong>Modularização:</strong> Divida funcionalidades complexas em funções menores e reutilizáveis.</li>
+                  <li><strong>Tratamento de Erros:</strong> Implemente tratamento de erros robusto usando <strong>VTAlert()</strong> para feedback ao usuário.</li>
+                  <li><strong>Documentação de Funções:</strong> Documente o propósito, parâmetros e retorno de cada função criada.</li>
+              </ol>
+             <br>
+             <br>
+             <h3 id="armadilhas-comuns">Armadilhas Comuns a Evitar</h3>
+             <ol>
+                 <li><strong>Não Tratar Teclas de Navegação:</strong> Sempre considere teclas como ESC e ENTER.</li>
+                 <li><strong>Esquecer de Limpar Buffer de Teclado:</strong> Use <strong>VTClearBuffer()</strong> antes de operações críticas.</li>
+                 <li><strong>Ignorar Diferentes Modelos de Terminal:</strong>  Sempre verifique o modelo com <strong>VTModelo()</strong> e adapte a interface</li>
+                 <li><strong>Sobrecarga de Informações:</strong> Evite exibir muitas informações em uma única tela.</li>
+                 <li><strong>Falta de Feedback:</strong> Sempre forneça feedback visual ou sonoro para ações do usuário.</li>
+             </ol>
+            <br>
+            <br>
+            <h2 id="casos-uso-avancados">Casos de Uso Avançados</h2>
+            <h3 id="exemplo-completo-aplicacao">Exemplo Completo de Aplicação</h3>
+            <div class="code-container">
+                <div class="code-header">
+                   <h6>advpl</h6>
+                   <button class="copy-button" onclick="copyCode(this, 'code30')">Copiar</button>
+                </div>
+                <pre><code id="code30" class="language-advpl">#INCLUDE "TOTVS.CH"
+#INCLUDE "APVT100.CH"
+
+/*/{Protheus.doc} VTDEMO1
+Programa de exemplo de uso das funcoes de VT100 para microterminal
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@version 1.0
+/*/
+User Function VTDEMO1()
+Local nPos       := 1
+Local cOpcao     := Space(1)
+Local cCodigo    := Space(6)
+Local dData      := CToD("")
+Local cSenha     := Space(6)
+Local nValor     := 0
+Local aOpcoes    := {}
+Local aItens     := {}
+Local aCab       := {}
+Local aSize      := {}
+Local aFields    := {}
+Local aHeader    := {}
+
+VTSetSize(2, 20)
+
+While .T.
+VTClear()
+InitializeVariables(@cCodigo, @dData, @nValor, @cSenha)
+VTClearBuffer()
+
+If !SelectTerminalType(@cOpcao)
+Exit
+EndIf
+
+DisplayDemoInfo()
+
+If !InputUserData(@cCodigo, @dData, @nValor, @cSenha)
+Loop
+EndIf
+
+If !ShowMenuOptions(@aOpcoes, @nPos)
+Loop
+EndIf
+
+ShowBrowserExample(@aItens, @aCab, @aSize, @nPos)
+ShowDBBrowserExample(@aFields, @aSize, @aHeader)
+
+If FinishDemo()
+Exit
+EndIf
+
+VTClearBuffer()
+EndDo
+
+Return .T.
+
+/*/{Protheus.doc} InitializeVariables
+Inicializa as variáveis do programa
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param cCodigo, character, código a ser inicializado
+@param dData, date, data a ser inicializada
+@param nValor, numeric, valor a ser inicializado
+@param cSenha, character, senha a ser inicializada
+/*/
+Static Function InitializeVariables(cCodigo, dData, nValor, cSenha)
+cCodigo := Space(6)
+dData   := CToD("")
+nValor  := 0
+cSenha  := Space(6)
+Return
+
+/*/{Protheus.doc} SelectTerminalType
+Seleciona o tipo de terminal
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param cOpcao, character, opção selecionada
+@return logical, verdadeiro se selecionou uma opção válida
+/*/
+Static Function SelectTerminalType(cOpcao)
+Local lRet := .T.
+
+While .T.
+cOpcao := "1"
+VTClear()
+@ 0,0 VTSAY "1.RF 2.MT44 3.MT16"
+@ 1,0 VTSAY "Selecione: " VTGET cOpcao PICT "9"
+VTRead
+
+If VTLastKey() == 27
+lRet := .F.
+Exit
+EndIf
+
+Do Case
+Case cOpcao == "1"
+VTSetSize(8,20)
+Exit
+Case cOpcao == "2"
+VTSetSize(2,40)
+Exit
+Case cOpcao == "3"
+VTSetSize(2,20)
+Exit
+Otherwise
+VTClear()
+@ 0,0 VTSay "Opcao invalida"
+VTInkey(1000)
+EndCase
+EndDo
+
+Return lRet
+
+/*/{Protheus.doc} DisplayDemoInfo
+Exibe informações do demo
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+/*/
+Static Function DisplayDemoInfo()
+@ 00,00 VTSay PadC("Demo de VT100", If(VTModelo()=="MT16" .or. VTModelo()=="RF",19,39))
+@ 01,00 VTSay "Modelo:" + VTModelo()
+
+If VTLastKey() == 27
+Return
+EndIf
+
+VTInkey(0)
+VTClear()
+Return
+
+/*/{Protheus.doc} InputUserData
+Coleta dados do usuário
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param cCodigo, character, código a ser coletado
+@param dData, date, data a ser coletada
+@param nValor, numeric, valor a ser coletado
+@param cSenha, character, senha a ser coletada
+@return logical, verdadeiro se todos os dados foram coletados com sucesso
+/*/
+Static Function InputUserData(cCodigo, dData, nValor, cSenha)
+Local lRet := .T.
+
+@ 00,00 VTSay "Codigo: "
+@ 00,08 VTGet cCodigo PICT "@!" VALID ValidCod(cCodigo) WHEN WhenCod()
+VTRead
+If VTLastKey() == 27
+lRet := .F.
+Return lRet
+EndIf
+
+@ 01,00 VTSay "Data: "
+@ 01,07 VTGet dData PICT "99/99/99" VALID ValidData(dData) WHEN WhenData()
+VTRead
+If VTLastKey() == 27
+lRet := .F.
+Return lRet
+EndIf
+
+VTClear()
+VTClearBuffer()
+
+@ 00,00 VTSay "Valor: "
+@ 00,07 VTGet nValor PICT "@E 999.99" WHEN WhenValor()
+VTRead
+If VTLastKey() == 27
+lRet := .F.
+Return lRet
+EndIf
+
+@ 01,00 VTSay "Senha: "
+@ 01,07 VTGet cSenha PASSWORD VALID (VTAlert(cSenha, "Senha Digitada", .T., 1500), .T.) WHEN WhenSenha()
+VTRead
+
+If VTLastKey() == 27
+lRet := .F.
+Return lRet
+EndIf
+
+Return lRet
+
+/*/{Protheus.doc} ShowMenuOptions
+Exibe opções de menu
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param aOpcoes, array, opções do menu
+@param nPos, numeric, posição selecionada
+@return logical, verdadeiro se uma opção foi selecionada
+/*/
+Static Function ShowMenuOptions(aOpcoes, nPos)
+Local lRet := .T.
+
+VTClear()
+VTAlert("Entrando no Achoice...","[-]", .T., 1500)
+VTClear()
+VTClearBuffer()
+
+aOpcoes := {"Opcao 1", "Opcao 2", "Opcao 3", "Opcao 4", "Opcao 5"}
+nPos := VTaChoice(0, 0, VTMaxRow(), VTMaxCol(), aOpcoes, , "U_VldAchVT", nPos)
+
+If VTLastKey() == 27
+lRet := .F.
+EndIf
+
+Return lRet
+
+/*/{Protheus.doc} ShowBrowserExample
+Exibe exemplo de browser
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param aItens, array, itens do browser
+@param aCab, array, cabeçalho do browser
+@param aSize, array, tamanhos das colunas
+@param nPos, numeric, posição selecionada
+/*/
+Static Function ShowBrowserExample(aItens, aCab, aSize, nPos)
+VTAlert("Entrando no aBrowser... aguarde...", "[-]", .T., 1500)
+
+aItens := {{"1010 ",10, "DESCRICAO1","UN "},;
+{"2010 ",20,"DESCRICAO2","CX "},;
+{"2020 ",30,"DESCRICAO3","CX "},;
+{"2010 ",40,"DESCRICAO4","CX "},;
+{"2020 ",50,"DESCRICAO5","CX "},;
+{"3010 ",60,"DESCRICAO6","CX "},;
+{"3020 ",70,"DESCRICAO7","CX "},;
+{"3030 ",80,"DESCRICAO7","CX "},;
+{"3040 ",90,"DESCRICAO7","CX "},;
+{"2010 ",100,"DESCRICAO4","CX "},;
+{"2010 ",110,"DESCRICAO4","CX "},;
+{"2020 ",120,"DESCRICAO5","CX "},;
+{"3010 ",130,"DESCRICAO6","CX "},;
+{"3020 ",140,"DESCRICAO7","CX "},;
+{"3030 ",150,"DESCRICAO7","CX "},;
+{"3050 ",160,"DESCRICAO7","CX "}}
+
+aCab  := {"Codigo","Cod","Descricao","UM"}
+aSize := {10,4,20,10}
+nPos  := 1
+nPos  := VTaBrowse(,,,,aCab,aItens,aSize,,nPos)
+Return
+
+/*/{Protheus.doc} ShowDBBrowserExample
+Exibe exemplo de DBBrowser
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param aFields, array, campos do DBBrowser
+@param aSize, array, tamanhos das colunas
+@param aHeader, array, cabeçalho do DBBrowser
+/*/
+Static Function ShowDBBrowserExample(aFields, aSize, aHeader)
+VTAlert("Entrando no DBBrowser... aguarde...", "[-]", .T., 2000)
+
+aFields := {"B1_COD", "B1_DESC", "B1_UM", "B1_PICM"}
+aSize   := {16, 20, 10, 15}
+aHeader := {"COD", "DESCRICAO", "UM", "% ICM"}
+
+SB1->( dbSeek(xFilial()) )
+VTDBBrowse(,,,, "SB1", aHeader, aFields, aSize)
+Return
+
+/*/{Protheus.doc} FinishDemo
+Verifica se o usuário deseja finalizar o demo
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@return logical, verdadeiro se o usuário deseja finalizar
+/*/
+Static Function FinishDemo()
+Local lRet := .F.
+
+VTClearBuffer()
+If VTYesNo("Deseja finalizar?", "Pergunta")
+lRet := .T.
+EndIf
+
+If VTLastKey() == 27
+lRet := .F.
+EndIf
+
+Return lRet
+
+/*/{Protheus.doc} ValidCod
+Valida o código inserido
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param cCodigo, character, código a ser validado
+@return logical, sempre retorna verdadeiro
+/*/
+Static Function ValidCod(cCodigo)
+Local aTela := VTSave(0, 0, VTMaxRow(), VTMaxCol())
+
+VTAlert("Total de bytes:" + AllTrim( Str(Len(AllTrim(cCodigo))) ), "Validando:", .T., 2000)
+VTClear()
+VTRestore(0, 0, VTMaxRow(), VTMaxCol(), aTela)
+
+Return .T.
+
+/*/{Protheus.doc} WhenCod
+Função executada antes da entrada do código
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@return logical, sempre retorna verdadeiro
+/*/
+Static Function WhenCod()
+Local aTela := VTSave(0, 0, VTMaxRow(), VTMaxCol())
+
+VTAlert("Exemplo de Get" + Chr(13) + Chr(10) + "com Caracter", "[-]ATENCAO", .T., 2000)
+VTClear()
+VTRestore(0, 0, VTMaxRow(), VTMaxCol(), aTela)
+
+Return .T.
+
+/*/{Protheus.doc} WhenData
+Função executada antes da entrada da data
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@return logical, sempre retorna verdadeiro
+/*/
+Static Function WhenData()
+Local aTela := VTSave(0, 0, VTMaxRow(), VTMaxCol())
+
+VTAlert("Exemplo de Get" + Chr(13) + Chr(10) + "com Data", "[-]ATENCAO", .T., 2000)
+VTClear()
+VTRestore(0, 0, VTMaxRow(), VTMaxCol(), aTela)
+
+Return .T.
+
+/*/{Protheus.doc} WhenValor
+Função executada antes da entrada do valor
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@return logical, sempre retorna verdadeiro
+/*/
+Static Function WhenValor()
+Local aTela := VTSave(0, 0, VTMaxRow(), VTMaxCol())
+
+VTAlert("Exemplo de Get" + Chr(13) + Chr(10) + "com Numerico", "[-]ATENCAO", .T., 2000)
+VTClear()
+VTRestore(0, 0, VTMaxRow(), VTMaxCol(), aTela)
+
+Return .T.
+
+/*/{Protheus.doc} WhenSenha
+Função executada antes da entrada da senha
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@return logical, sempre retorna verdadeiro
+/*/
+Static Function WhenSenha()
+Local aTela := VTSave(0, 0, VTMaxRow(), VTMaxCol())
+
+VTAlert("Exemplo de Get" + Chr(13) + Chr(10) + "com Senha", "[-]ATENCAO", .T., 2000)
+VTClear()
+VTRestore(0, 0, VTMaxRow(), VTMaxCol(), aTela)
+
+Return .T.
+
+/*/{Protheus.doc} ValidData
+Valida a data inserida
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param dData, date, data a ser validada
+@return logical, verdadeiro se a data for válida
+/*/
+Static Function ValidData(dData)
+Local lRet := .T.
+
+If Empty(dData)
+lRet := .F.
+VTAlert("Data Invalida", "Atencao", .T., 2000)
+EndIf
+
+Return lRet
+
+/*/{Protheus.doc} VldAchVT
+Função de validação para VTAChoice
+@type function
+@author DOTHINK - ERIKE
+@since 10/11/2023
+@param modo, numeric, modo de operação
+@param nElem, numeric, elemento atual
+@param nElemW, numeric, elemento em foco
+@return numeric, código de retorno para VTAChoice
+/*/
+User Function VldAchVT(modo, nElem, nElemW)
+Local nRet := 2
+
+If modo == 1
+VTAlert("Inicio do Achoice", "-", .T., 1000)
+ElseIf modo == 2
+VTAlert("Fim do Achoice", "-", .T., 1000)
+Else
+If VTLastKey() == 27
+VTAlert("Saindo do Achoice", "-", .T., 1000)
+VTBeep(1)
+nRet := 0
+ElseIf VTLastKey() == 13
+VTAlert("Tecla <ENTER> pressionada", "-", .T., 1000)
+VTBeep(1)
+nRet := 1
+EndIf
+EndIf
+
+Return nRet</code></pre>
+             </div>
+           <br>
+           <br>
+              </div>
+            </div>
+          
+                <div class="part">
+                  <h2 class="post-heading">Conclusão: Dominando VT100 em ADVPL com a DOTHINK</h2>
+                  <p class="post-text">Ao longo deste guia abrangente, exploramos o universo da programação VT100 em ADVPL, uma habilidade essencial para desenvolvedores que trabalham com o TOTVS Protheus. Como especialistas em VT100 na <a href=https://dothink.com.br/consultoria-protheus.html><strong>consultoria Protheus DO THINK</strong></a> entendemos a importância crucial dessas técnicas para o desenvolvimento de soluções eficientes e robustas.</p>
+                  <p class="post-text">Recapitulando os pontos-chave:</p>
+                  <ol>
+                    <li><strong>Versatilidade em Coletores de Dados e Microterminais:</strong> As funções VT100 oferecem um conjunto poderoso de ferramentas para criar interfaces eficientes em diversos modelos de coletores de dados e microterminais. Esta versatilidade permite que desenvolvedores criem soluções adaptáveis a diferentes ambientes operacionais, desde armazéns e linhas de produção até operações de campo. Na <a href="https://dothink.com.br/fabrica-de-software.html"><strong>fábrica de sofware</strong></a> da DOTHINK, aproveitamos essa flexibilidade para desenvolver aplicações personalizadas que atendem às necessidades específicas de cada cliente, garantindo eficiência e precisão na coleta de dados em qualquer cenário.</li>
+                    <li><strong>Eficiência na Coleta de Dados:</strong> A implementação precisa dessas funções resulta em aplicações ágeis e responsivas, cruciais para operações de coleta de dados em tempo real, inventário e logística - áreas onde a DOTHINK possui extensa experiência e expertise.</li>
+                    <li><strong>Integração Perfeita com Protheus:</strong> A integração seamless das soluções VT100 com o ecossistema Protheus permite estender as funcionalidades do ERP para dispositivos móveis de coleta, um aspecto que nossa <a href=https://dothink.com.br/fabrica-de-software.html><strong>fábrica de software</strong></a> prioriza em cada projeto de automação.</li>
+                    <li><strong>Boas Práticas para Soluções Móveis:</strong>Adotar código limpo e seguir as melhores práticas não só melhora a qualidade do software para coletores de dados, mas também facilita a manutenção e atualização - princípios fundamentais na fábrica de software da DOTHINK.</li>
+                   </ol>
+                   <p class="post-text">Para saber mais sobre como podemos ajudar sua empresa a maximizar o potencial do Protheus com soluções VT100 personalizadas para coletores de dados e microterminais, entre em <a href=#contact>contato</a> para uma consultoria especializada em soluções de mobilidade e coleta de dados.</p>              
+                </div>                      
+              </div>
+
+              <!--tags panel-->
+              <div class="tags panel">
+                <ul class="sidebar-list tags-list ">
+                  <li class="tags-icon-label "><i class="fas fa-tags icon"></i></li>
+                  <li class="tag-item"><a class="tag-link" href="automacao-e-coleta-de-dados-protheus.html">Sigaacd</a></li>
+                  <li class="tag-item"><a class="tag-link" href="consultoria-protheus.html">Consultoria Protheus</a></li>
+                  <li class="tag-item"><a class="tag-link" href="fabrica-de-software.html">Fábrica de Software</a></li>
+                </ul>
+              </div>
+              <!--author profile panel-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End _post -->
+    <!-- Start  page-footer Section-->
+    <footer class="page-footer dark-color-footer" id="page-footer">
+      <div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/footer-bg-1.jpg" data-bg-opacity=".25"></div>
+      <div class="container">
+        <div class="row footer-cols">
+          <div class="col-12 col-md-8 col-lg-4  footer-col "><img class="img-fluid footer-logo" loading="lazy" src="assets/images/logo/logo-colored.png" alt="logo"/>
+            <div class="footer-col-content-wrapper">        
+              <p class="footer-text-about-us ">
+                Transforme seu negócio com a DO THINK. Onde a inovação encontra a expertise em TOTVS Protheus. Juntos, construímos o futuro da sua empresa.                
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2 footer-col ">
+            <h2 class=" footer-col-title    ">Recursos</h2>
+            <div class="footer-col-content-wrapper">
+              <ul class="footer-menu">
+                <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#0">suporte</a>
+                </li>
+                <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#0">acesso consultor</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12     col-lg-4 footer-col ">
+            <h2 class=" footer-col-title    ">Informações de Contato</h2>
+            <div class="footer-col-content-wrapper">       
+              <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:contato@dothink.com.br">contato@dothink.com.br</a></div>
+              <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="info">Av. Brigadeiro Faria Lima, 2369, Conj. 1102 - Jardim Paulistano - São Paulo - Brasil</span></div>
+              <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
+              <div class="contact-info-card">
+                <div class="social-icons">
+                  <div class="sc-wrapper dir-row sc-size-32">
+                    <ul class="sc-list">
+                      <li class="sc-item " title="Facebook"><a class="sc-link" href="https://www.facebook.com/profile.php?id=61561498754254" title="social media icon"><i class="fab fa-facebook-f sc-icon"></i></a></li>
+                      <li class="sc-item " title="youtube"><a class="sc-link" href="#0" title="social media icon"><i class="fab fa-youtube sc-icon"></i></a></li>
+                      <li class="sc-item " title="instagram"><a class="sc-link" href="https://www.instagram.com/dothink_erp/?igsh=Z2hmeGsxZTI0NHE5" title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
+                      <li class="sc-item " title="X"><a class="sc-link" href="https://twitter.com/DoThink3" title="social media icon"><i class="fab fa-x-twitter sc-icon"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 d-flex justify-content-start">
+              <p class="creadits">
+                 
+                
+                &copy; 2025
+                Criado por:                
+                           <a class="link" href="#0">DO THINK</a>
+                           Todos os direitos reservados. Protheus, ADVPL, TOTVS são produtos e marca registrada de propriedade da TOTVS S.A. Logotipos TOTVS e Microsiga são de propriedade da TOTVS S.A. O DO THINK é um site independente e não tem vínculo com a TOTVS, ou qualquer uma de suas franquias ou representantes.
+              </p>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-end">
+              <div class="terms-links"><a href="termo-uso.html">Termo de Uso </a>
+                | <a href="politica-privacidade.html">Política de Privacidade.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End  page-footer Section-->
+    <!-- Start loading-screen Component-->
+    <div class="loading-screen" id="loading-screen"><span class="bar top-bar"></span><span class="bar down-bar"></span><span class="progress-line"></span><span class="loading-counter"> </span></div>
+    <!-- End loading-screen Component-->
+    <!-- Start back-to-top Button-->
+    <div class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up icon "></i>
+    </div>
+    <!-- End back-to-top Button-->
+       
+        <!--     JQuery     -->
+        <script src="js/vendors/jquery-3.6.1.min.js"></script>
+        
+        <!--     bootstrap     -->
+        <script src="js/vendors/bootstrap.bundle.min.js"></script>
+        
+        <!--     wow     -->
+        <script src="js/vendors/wow.min.js"></script>
+        
+        <!--     main     -->
+        <script src="js/main.js"></script>
+		<script>
+		 function copyCode(button, cCodCode) {
+		     var code = document.getElementById(cCodCode).innerText;
+		     navigator.clipboard.writeText(code).then(function() {
+		         button.innerText = 'Copiado';
+		         button.classList.add('copied');
+		         setTimeout(function() {
+		             button.innerText = 'Copiar';
+		             button.classList.remove('copied');
+		         }, 2000);
+		     });
+		 }
+		 
+		 // Definindo a sintaxe ADVPL para Prism.js
+		 Prism.languages['advpl'] = {
+		     'comment': [ { pattern: /(^|[^\\])\/\*[\s\S]*?\*\//, lookbehind: true }, { pattern: /\/\/.*/, greedy: true } ],
+		     'string': /"(\\.|[^"\\])*"/,
+		     'keyword': /\b(?:User|Static|End|EndIf|Function|Local|If|ElseIf|Else|For|Next|Return|While|EndDo|Exit|VALID|WHEN|PICT)\b/,
+		     'operator': /(?:=|<|>|<=|>=|!=|==|:=|.or.|.and.|\|\||\+|-|\*|\/)/,
+		     'number': /(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/i,
+		     'identifier': /(?:\w+)/
+		 };
+		</script>        
+  </body>
+</html>

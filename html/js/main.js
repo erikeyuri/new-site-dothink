@@ -343,7 +343,7 @@ $(function () {
     if (pattern.test(emailInput.val()) === false) {
       $(emailInput)
         .siblings(".error-msg")
-        .text("Please Enter a valid Email")
+        .text("Por favor, insira um e-mail válido")
         .css("display", "block");
       isValidEmail = false;
     } else {
@@ -355,10 +355,10 @@ $(function () {
   submitBtn.on("click", function (e) {
     e.preventDefault();
 
-    ValidateNotEmptyInput(userName, "Please Enter Your Name");
-    ValidateNotEmptyInput(userEmail, "Please Enter Your Email");
-    ValidateNotEmptyInput(msgSubject, "Please Enter Your subject");
-    ValidateNotEmptyInput(msgText, "Please Enter Your Message");
+    ValidateNotEmptyInput(userName, "Por favor digite seu nome");
+    ValidateNotEmptyInput(userEmail, "Por favor insira seu e-mail");
+    ValidateNotEmptyInput(msgSubject, "Por favor insira seu assunto");
+    ValidateNotEmptyInput(msgText, "Por favor, digite sua mensagem");
     validateEmailInput(userEmail);
 
     if (isValidInput && isValidEmail) {
@@ -369,7 +369,7 @@ $(function () {
 
         success: function (data) {
           $(".done-msg")
-            .text("Thank you, Your Message Was Received!")
+            .text("Obrigado, sua mensagem foi recebida!")
             .toggleClass("show");
           setTimeout(function () {
             $(".done-msg").text("").toggleClass("show");

@@ -6,17 +6,20 @@ $name = trim($_POST['UserName']);
 $email = trim($_POST['UserEmail']);
 $subject = trim($_POST['subject']);
 $message = trim($_POST['message']);
-$to = "your-email@email.com"; // Change with your email address
+$to = "contato@dothink.com.br";
+
+// Honeypot field (hidden field in HTML)
+$honeypot = $_POST['website']; // Change 'website' to the name of your honeypot field
 
 // Email address validation - works with php 5.2+
 function is_email_valid($email) {
 	return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-
-if( isset($name) && isset($email) && isset($subject) && isset($message) && is_email_valid($email) ) {
+if (isset($name) && isset($email) && isset($subject) && isset($message) && is_email_valid($email) && empty($honeypot)) {
 
 	// Avoid Email Injection and Mail Form Script Hijacking
+	// Evite injeção de e-mail e sequestro de script de formulário de e-mail
 	$pattern = "/(content-type|bcc:|cc:|to:)/i";
 	if( preg_match($pattern, $name) || preg_match($pattern, $email) || preg_match($pattern, $message) ) {
 		exit;
@@ -29,11 +32,11 @@ if( isset($name) && isset($email) && isset($subject) && isset($message) && is_em
 	<strong>Name:</strong> $name <br>
 	<strong>Email:</strong> <a href="mailto:"$email">$email</a> <br> 
 	<strong>Subject:</strong> $subject <br><br><br>
-	
-	<strong>Message:</strong> <br> $message 
+
+	<strong>Message:</strong> <br> $message
 EOD;
 //Must end on first column
-	
+
 	$headers = "From: $name <$email>\r\n";
 	$headers .= 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=UTF-8 ' . "\r\n";

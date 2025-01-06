@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+	<title>Consultoria Protheus: ADVPL para Etiquetas e Códigos de Barras</title>
+	<meta name="description" content="Maximize a eficiência na geração de etiquetas térmicas com programação ADVPL. Nossa consultoria Protheus oferece soluções personalizadas, integrando perfeitamente seu sistema de etiquetagem ao ERP.">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name=author content="Do Think Soluções Inteligentes "/>
+	<meta name=Language content="pt-br"/>
+	<meta name=Copyright content="Do Think Soluções Inteligentes "/>
+	<meta name=Designer content="Do Think Soluções Inteligentes "/>
+	<meta name=Publisher content="Do Think Soluções Inteligentes "/>
+	<meta name=Geography content="Av. Brigadeiro Faria Lima, 2369,Conj. 1102 Jardim Paulistano"/>
+	<meta name=zipcode content="01452-000"/>
+	<meta name=city content="São Paulo"/>
+	<meta name=country content="Brasil"/>
+	<meta name=googlebot content="index, follow"/>
+	<meta property=og:url content="https://dothink.com.br/202410-programacao-impressoras-termicas-protheus.html"/>
+	<meta property=og:title content="ADVPL para Etiquetas Térmicas: Consultoria Protheus"/>
+	<meta property=og:site_name content="Do Think Soluções Inteligentes"/>
+	<meta property=og:description content="Empresa de consultoria no ERP Protheus, que possui experiência e uma equipe de profissionais diferenciados, realizando a implantação e sustentação completa do sistema Totvs Protheus em sua empresa."/>
+	<meta property=og:image content="https://dothink.com.br/assets/images/Blog/impressora-termica.webp"/>
+	<meta property=og:image:type content="image/webp"/>
+	<meta property=og:type content=website />
+	<meta property=article:publisher content="https://www.facebook.com/people/Do-Think-Solu%C3%A7%C3%B5es-Inteligentes/61561498754254/"/>
+	<meta name=twitter:card content="summary"/>
+	<meta name=twitter:description content="Aprimore seu sistema de etiquetas térmicas com programação ADVPL especializada. Nossa consultoria Protheus oferece integração avançada e personalização para otimizar seus processos logísticos."/>
+	<meta name=twitter:title content="Consultoria Protheus: Soluções ADVPL para Etiquetas Térmicas"/>
+	<meta name=twitter:domain content="Do Think Soluções Inteligentes"/>
+	<meta name=twitter:image:src content="https://dothink.com.br/assets/images/Blog/impressora-termica.webp"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script type=application/ld+json>
+		{
+		  "@context" : "http://schema.org",
+		  "@type" : "LocalBusiness",
+		  "name" : "Do Think Soluções Inteligentes ",
+		  "image" : "https://dothink.com.br/assets/images/Blog/impressora-termica.webp",
+		  "address" : {
+			"@type" : "PostalAddress",
+			"streetAddress" : "Av. Brigadeiro Faria Lima, 2369",
+			"addressLocality" : "São Paulo",
+			"addressRegion" : "SP"
+		  },
+		  "url" : "https://dothink.com.br/202410-programacao-impressoras-termicas-protheus.html"
+		}
+		</script>
+        
+        <!-- fav icon -->
+        <link rel="icon" href="assets/images/fav-icon/dothink_icon.png">
+        
+        <!-- bootstarp -->
+        <link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+        
+        <!-- animate.css file -->
+        <link rel="stylesheet" href="css/vendors/animate.css">
+        
+        <!-- flaticon -->
+        <link rel="stylesheet" href="css/vendors/flaticon/flaticon.css">
+        
+        <!-- fontAwesome -->
+        <link rel="stylesheet" href="css/vendors/all.min.css">
+        
+        <!-- bootstrap icons -->
+        <link rel="stylesheet" href="css/vendors/bootstrap-icons-1.9.1/bootstrap-icons.css">
+        
+        <!-- Font Family -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
+        
+        <!-- main-LTR -->
+        <link rel="stylesheet" href="css/main-LTR.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77223718-1"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+        <style>
+         .code-container {
+         position: relative;
+         background: #4b4b4b;
+         padding: 0.5em;
+         border-radius: 8px;
+         margin-bottom: 1em;
+         }
+         .code-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 0.5em;
+         }
+         .code-header h6 {
+         color: #fff;
+         margin: 0;
+         }
+         .copy-button {
+         background: #3e9ef8;
+         color: #fff;
+         border: none;
+         padding: 0.5em 1em;
+         border-radius: 5px;
+         cursor: pointer;
+         }
+         .copy-button:focus {
+         outline: none;
+         }
+         .copy-button.copied {
+         background: #19bc9c;
+         }
+         /* Customizing Prism.js colors */
+         .token.comment {
+         color: #6a9955; /* Green */
+         }
+         .token.string {
+         color: #ce9178; /* Light red */        
+         }
+         .token.keyword {
+         color: #047dbe; /* Blue */
+         font-weight: bold;
+         }
+         .token.operator {
+         color: #d4d4d4; /* Light gray */
+         }
+         .token.number {
+         color: #b5cea8; /* Light green */
+         }
+         .token.identifier {
+         color: #9cdcfe; /* Light blue */
+         }
+          table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin-bottom: 1em;
+          border-radius: 10px;
+          overflow: hidden;
+          }
+          th, td {
+          border: 1px solid #333;
+          padding: 8px;
+          text-align: left;
+          color: #f3f3f3;
+          }
+          th {
+          background-color: #1e1e1e;
+          }
+          td {
+          background-color: #2d2d2d;
+          }
+          tbody tr:nth-child(odd) td {
+          background-color: #505050;
+          }
+          tbody tr:hover td {
+          background-color: #3a3a3a;
+          }
+          .inner-table {
+          background-color: #959494;
+          border-radius: 10px;
+          margin: 10px;
+          overflow: hidden;
+          }
+          .inner-table th, .inner-table td {
+          border: 1px solid #444;
+          background-color: #2d2d2d;
+          }
+       </style>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+      </head>
+  <body class=" dark-theme ">
+    <!--Start Page Header-->
+    <header class=" page-header   header-basic" id="page-header">
+      <div class="header-search-box">
+        <div class="close-search"></div>
+        <form class="nav-search search-form" role="search" method="get" action="#">
+          <div class="search-wrapper"> 
+            <label class="search-lbl">Para Pesquisar:</label>
+            <input class="search-input" type="search" placeholder="Pesquise..." name="searchInput" autofocus="autofocus"/>
+            <button class="search-btn" type="submit"><i class="bi bi-search icon"></i></button>
+          </div>
+        </form>
+      </div>
+      <div class="container">
+        <nav class="menu-navbar">
+          <div class="header-logo"><a class="logo-link" href="https://dothink.com.br"><img class="logo-img light-logo" loading="lazy" src="assets/images/logo/logo-light.png" alt="logo"/><img class="logo-img  dark-logo" loading="lazy" src="assets/images/logo/logo-dark.png" alt="logo"/></a></div>
+          <div class="links menu-wrapper ">
+            <ul class="list-js links-list">
+              <li class="menu-item"><a class="menu-link  " href="https://dothink.com.br">Principal </a></li>
+              <li class="menu-item"><a class="menu-link  " href="about-us.html">Sobre Nós </a></li>
+              <li class="menu-item has-sub-menu"><a class="menu-link  active" href="#0">Serviços<i class="fas fa-plus  plus-icon"> </i></a>
+                <ul class="sub-menu ">
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="consultoria-protheus.html">Consultoria Protheus</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="service-single.html">service single</a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a class="menu-link  " href="#0">Portfolio</a>
+              </li>
+              <li class="menu-item"><a class="menu-link  " href="blog.html">Blog</a>
+              </li>
+              <li class="menu-item has-sub-menu"><a class="menu-link  " href="#0">Páginas<i class="fas fa-plus  plus-icon"> </i></a>
+                <ul class="sub-menu ">
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="pricing.html">pricing plans</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="our-team.html">our team</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="politica-privacidade.html">Política de Privacidade</a></li>
+                  <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="termo-uso.html">Termo de Uso</a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a class="menu-link  " href="fale-conosco.html">Fale Conosco </a></li>
+            </ul>
+          </div>
+          <div class="controls-box">
+            <!--Menu Toggler button-->
+            <div class="control  menu-toggler"><span></span><span></span><span></span></div>
+            <!--search Icon button-->
+            <div class="control header-search-btn"><i class="bi bi-search icon"></i></div>
+            <!--Dark/Light mode button-->
+            <div class="mode-switcher ">
+              <div class="switch-inner go-light " title="Switch To Light Mode "><i class="bi bi-sun icon "></i></div>
+              <div class="switch-inner go-dark" title="Switch To Dark Mode "><i class="bi bi-moon icon "></i></div>
+            </div>
+            <!--mini shoping cart-->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--End Page Header-->
+    <!-- Start _post -->
+    <div class="blog blog-post ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <!--post heading area2021-->
+            <div class="social"> 
+              <div class="share-us ">
+                <h6 class="share-title">compartilhar postagem:</h6>
+                <div class="sc-wrapper dir-row sc-flat">
+                  <ul class="sc-list">
+                    <li class="sc-item " title="Facebook"><a class="sc-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dothink.com.br/202410-programacao-impressoras-termicas-protheus.html" target="_blank" title="DO THINK no Facebook"><i class="fab fa-facebook-f sc-icon"></i></a></li>
+                    <li class="sc-item " title="linkedin"><a class="sc-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.dothink.com.br/202410-programacao-impressoras-termicas-protheus.html" title="DO THINK no Linkedin"><i class="fab fa-linkedin sc-icon"></i></a></li>
+                    <li class="sc-item " title="instagram"><a class="sc-link" href="https://www.instagram.com/dothink_erp/?igsh=Z2hmeGsxZTI0NHE5" title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
+                    <li class="sc-item " title="X"><a class="sc-link" href="https://twitter.com/intent/tweet?url=https://www.dothink.com.br/202410-programacao-impressoras-termicas-protheus.html" title="DO THINK no X"><i class="fab fa-x-twitter sc-icon"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h1 class="post-title">Dominando a Programação de Impressoras Térmicas em ADVPL: Guia Avançado para Etiquetas de Código de Barras</h1>
+            <div class="post-img-wrapper post-featured-area"><img class="featured-img" loading="lazy" src="assets/images/blog/post-images/impressora-termica.webp" alt="Impressora Térmica"></div>
+          </div>
+          <div class="col-12 col-lg-9 mx-auto">
+            <div class="post-main-area">
+              <div class="post-info"><a class="info post-cat" href="#"><i class="fas fa-list-alt icon"></i>SIGAACD</a><a class="info post-author" href="#"><i class="fas fa-user icon"></i>Erike Yuri</a><a class="info post-date" href="#"><i class="fas fa-history icon"></i>10/11/2024</a></div>
+              <div class="post-content">
+                <p class=" first-litter post-text">A impressão de etiquetas com código de barras é um componente crítico em diversos setores, especialmente na logística e no gerenciamento de estoque. Para desenvolvedores que trabalham com o ERP Protheus, dominar a programação de impressoras térmicas em ADVPL é uma habilidade essencial. Este guia abrangente explorará as nuances da geração e impressão de etiquetas com código de barras usando ADVPL, uma linguagem robusta utilizada no ecossistema Protheus.</p>
+                <h2 class="post-heading" id="Fundamentos">Fundamentos da Programação de Impressoras Térmicas em ADVPL</h2>
+                <!--div class="post-img-wrapper"><img loading="lazy" src="assets/images/blog/post-images/post-img.jpg" alt="post image"></div-->
+                <p class="post-text">A programação de impressoras térmicas em ADVPL envolve o uso de funções especializadas que permitem a criação de layouts complexos de etiquetas. Estas funções são projetadas para trabalhar com várias linguagens de impressão térmica, incluindo:</p>
+                <ul class="post-list">
+                  <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">ZPL</span> (Zebra Programming Language)</span></li>
+                  <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">EPL</span> (Eltron Programming Language)</span></li>
+                  <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">DPL</span> (Datamax Programming Language)</span></li>
+                  <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">IPL</span> (Intermec Programming Language)</span></li>
+                </ul>
+                <p class="post-text">Uma das principais vantagens do ADVPL neste contexto é a abstração que oferece. Os desenvolvedores não precisam dominar as linguagens específicas de cada fabricante, pois o ADVPL fornece uma interface unificada para diferentes modelos de impressoras.</p>
+                <p class="post-text">O que veremos:</p>
+                <menu>
+                  <li><a href="#configuracao-inicial-e-preparacao">Configuração Inicial e Preparação</a></li>
+                  <li><a href="#criando-layots-etiquetas-avanc">Criando Layouts de Etiquetas</a></li>
+                  <li><a href="#trab-codigo-barras-avancados">Trabalhando com Códigos de Barras Avançados</a></li>
+                  <li><a href="#otimizacao-diferentes-fabricantes-imp">Otimização para Diferentes Fabricantes de Impressoras</a></li>
+                  <li><a href="#melhores-praticas-e-otimizacao-performance">Melhores Práticas e Otimização de Performance</a></li>
+                  <li><a href="#Funcoes-advpl-imp-termica">Funções ADVPL para Etiquetas Térmicas</a> <p><small>(<a href="#MSCBPrinter">MSCBPrinter</a>, <a href="#MSCBClosePrinter">MSCBClosePrinter</a>, <a href="#MSCBBegin">MSCBBegin</a>, <a href="#MSCBEnd">MSCBEnd</a>, <a href="#MSCBSay">MSCBSay</a>, <a href="#MSCBSayBar">MSCBSayBar</a>, <a href="#MSCBBox">MSCBBox</a>, <a href="#MSCBLineH">MSCBLineH</a>, <a href="#MSCBLineV">MSCBLineV</a>, <a href="#MSCBLoadGraf">MSCBLoadGraf</a>, <a href="#MSCBGraphic">MSCBGraphic</a>, <a href="#MSCBWrite">MSCBWrite</a>, <a href="#MSCBInfoEti">MSCBInfoEti</a>)</small></p></li>
+                  <li><a href="#conclusao">Conclusão</a></li>
+              </menu>  
+              <h2 id="configuracao-inicial-e-preparacao">Configuração Inicial e Preparação</h2>
+              <p>Antes de mergulhar na programação, é crucial configurar corretamente a impressora. A função MSCBPrinter é fundamental neste processo:</p>
+              <div class="code-container">
+                  <div class="code-header">
+                      <h4>Sintaxe Advpl</h4>
+                      <button class="copy-button" onclick="copyCode(this, 'code1')">Copiar</button>
+                  </div>
+                  <pre><code id="code1" class="language-advpl">//Exemplo de função MSCBPRINTER
+MSCBPRINTER(cModelPrt, cPorta, nDensidade, nTamanho, lSrv, nPorta, cServer, cEnv, nMemoria, cFila, lDrvWin, cPathSpool)</code></pre>
+              </div>
+              
+              <p>Esta função permite especificar:</p>
+              <menu>
+                  <li>Modelo da impressora</li>
+                  <li>Porta de comunicação</li>
+                  <li>Densidade de impressão</li>
+                  <li>Tamanho da etiqueta</li>
+                  <li>Configurações de servidor e ambiente</li>
+              </menu>
+              <p>É importante notar que a configuração correta destes parâmetros é essencial para garantir a qualidade e precisão da impressão.</p>
+              
+              <table>
+                  <tbody>
+                      <tr>
+                          <th>Parâmetros</th>
+                          <th>Descrição</th>
+                      </tr>
+                      <tr>
+                          <td>[cModelPrt]</td>
+                          <td>String com o modelo de impressora:</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2">
+                              <table class="inner-table">
+                                  <tbody>
+                                      <tr>
+                                          <th>Fabricante</th>
+                                          <th>Impressoras</th>
+                                      </tr>
+                                      <tr>
+                                          <td>Datamax</td>
+                                          <td>ALLEGRO, ALLEGRO 2, PRODIGY, DMX, DESTINY, URANO, DATAMAX, OS 214, OS 314, PRESTIGE, ARGOX</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Eltron</td>
+                                          <td>ELTRON, TLP 2722, TLP 2742, TLP 2844, TLP 3742, C4-8</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Intermec</td>
+                                          <td>INTERMEC, 3400-8, 3400-16, 3600-8, 4440-16, 7421C-8</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Zebra</td>
+                                          <td>S300, S400, S500-6, S500-8, Z105S-6, Z105S-8, Z160S-6, Z160S-8, Z140XI, S600, Z4M, Z90XI, Z170XI, ZEBRA</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>[cPorta]</td>
+                          <td>String com a porta</td>
+                      </tr>
+                      <tr>
+                          <td>[nDensidade]</td>
+                          <td>Número com a densidade referente a quantidade de pixel por mm. Este parâmetro só deve ser informado quando o parâmetro <u>cModelPrt</u> não for informado, pois <u>cModelPrt</u> o atualizará automaticamente. A utilização deste parâmetro deverá ser usada quando não souber o modelo da impressora, a aplicação entenderá que se trata de uma impressora Zebra. O tamanho da etiqueta será necessário quando a mesma não for contínua.</td>
+                      </tr>
+                      <tr>
+                          <td>[nTamanho]</td>
+                          <td>Tamanho da etiqueta em Milímetros. Lembrando que este tamanho só deve ser passado se a etiqueta for contínua.</td>
+                      </tr>
+                      <tr>
+                          <td>[lSrv]</td>
+                          <td>Se .t. imprime no server, .f. no client. O seu valor padrão é .f.</td>
+                      </tr>
+                      <tr>
+                          <td>[nPorta]</td>
+                          <td>Número da porta de outro server</td>
+                      </tr>
+                      <tr>
+                          <td>[cServer]</td>
+                          <td>Endereço IP de outro server</td>
+                      </tr>
+                      <tr>
+                          <td>[cEnv]</td>
+                          <td>Environment do outro server</td>
+                      </tr>
+                      <tr>
+                          <td>[nMemoria]</td>
+                          <td>Número com bloco de memória da impressora térmica. Caso seja enviada muita informação para a impressora, a fim que esta venha imprimir (sobrecarregando a memória), pode ocorrer perda de dados. Por outro lado, se for informado blocos muito pequenos de memória, implicará na diminuição da performance da impressora. Sendo assim, o programador deverá fazer uma avaliação para ver o que melhor se adequa a sua situação.</td>
+                      </tr>
+                      <tr>
+                          <td>[cFila]</td>
+                          <td>Diretório onde será gravada as filas</td>
+                      </tr>
+                      <tr>
+                          <td>[lDrvWin]</td>
+                          <td>Indica se será utilizado os drivers do Windows para impressão</td>
+                      </tr>
+                      <tr>
+                          <td>[cPathSpool]</td>
+                          <td>Caminho do diretório onde serão geradas as filas de impressão</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <br>
+              <br>
+              <h2 id="criando-layots-etiquetas-avanc">Criando Layouts de Etiquetas</h2>
+              <p>O processo de criação de uma etiqueta geralmente segue uma estrutura definida:</p>
+              <ol>
+              <li>Iniciar a etiqueta com <strong>MSCBBegin</strong></li>
+              <li>Adicionar elementos como texto, linhas, caixas, código de barras e imagens. Ou até mesmo um bloco com código da linguagem nativa da impressora</li>
+              <li>Finalizar a etiqueta com <strong>MSCBEnd</strong></li>
+          </ol>
+          <p>Vamos explorar um exemplo mais avançado:</p>
+          <div class="code-container">
+              <div class="code-header">
+                  <h4>Sintaxe Advpl MSCBBEGIN e MSCBEND</h4>
+                  <button class="copy-button" onclick="copyCode(this, 'code2')">Copiar</button>
+              </div>
+              <pre><code id="code2" class="language-advpl">MSCBBEGIN(1, 6) // Inicia a etiqueta
+   MSCBBOX(02, 01, 76, 34, 1) // Cria uma caixa
+   MSCBSAY(10, 06, "PRODUTO:", "N", "A", "012,008")
+   MSCBSAY(10, 12, cDescProd, "N", "A", "012,008")
+   MSCBSAY(10, 18, "LOTE:", "N", "A", "012,008")
+   MSCBSAY(10, 24, cLote, "N", "A", "012,008")
+   MSCBSAYBAR(23, 30, cCodigo, "N", "C", 8.36, .F., .T., .F., , 2, 1) // Imprime o código de barras
+MSCBEND() // Finaliza a etiqueta</code></pre>
+          </div>
+          <p>Este exemplo demonstra como criar uma etiqueta mais complexa, incluindo múltiplos campos de texto e um código de barras.</p>
+          <br><br>                            
+          <h2 id="trab-codigo-barras-avancados">Trabalhando com Códigos de Barras Avançados</h2>
+          <p>A função <strong>MSCBSayBar</strong>  é o coração da impressão de códigos de barras em ADVPL. Ela suporta uma ampla variedade de simbologias, incluindo:</p>
+          <ol>
+              <li>Code 128</li>
+              <li>EAN-13</li>
+              <li>QR Code</li>
+              <li>Data Matrix</li>
+          </ol>
+          <p>Aqui está um exemplo avançado usando o GS1-128, um padrão amplamente utilizado na indústria:</p>
+          <div class="code-container">
+              <div class="code-header">
+                  <h4>Sintaxe Advpl MSCBSAYBAR</h4>
+                  <button class="copy-button" onclick="copyCode(this, 'code3')">Copiar</button>
+              </div>
+              <pre><code id="code3" class="language-advpl">aConteudo := {;
+      {"01", "07893316010411"                             } ,;// GTIN
+      {"10", "0000970100" + MSCB128B() + "1" + MSCB128C() } ,;// Lote
+      {"37", "0004"                                       } ,;// Quantidade
+      {"21", "000494"                                     } } // Número de Série
+
+MSCBSAYBAR(08, 10, aConteudo, "N", "MB07", 10, .F., .T., .F., "C", 2, 1, .F.)</code></pre>
+          </div>
+          <p>Este código cria um código de barras GS1-128 que incorpora múltiplas informações em um único código, uma prática comum em logística avançada e rastreamento de produtos.</p>
+          <br><br>
+
+
+
+
+
+
+           <br>
+           <br>
+              </div>
+            </div>
+          
+                <div class="part">
+                  <h2 class="post-heading">Conclusão: Dominando VT100 em ADVPL com a DOTHINK</h2>
+                  <p class="post-text">Ao longo deste guia abrangente, exploramos o universo da programação VT100 em ADVPL, uma habilidade essencial para desenvolvedores que trabalham com o TOTVS Protheus. Como especialistas em VT100 na <a href=https://dothink.com.br/consultoria-protheus.html><strong>consultoria Protheus DO THINK</strong></a> entendemos a importância crucial dessas técnicas para o desenvolvimento de soluções eficientes e robustas.</p>
+                  <p class="post-text">Recapitulando os pontos-chave:</p>
+                  <ol>
+                    <li><strong>Versatilidade em Coletores de Dados e Microterminais:</strong> As funções VT100 oferecem um conjunto poderoso de ferramentas para criar interfaces eficientes em diversos modelos de coletores de dados e microterminais. Esta versatilidade permite que desenvolvedores criem soluções adaptáveis a diferentes ambientes operacionais, desde armazéns e linhas de produção até operações de campo. Na <a href="https://dothink.com.br/fabrica-de-software.html"><strong>fábrica de sofware</strong></a> da DOTHINK, aproveitamos essa flexibilidade para desenvolver aplicações personalizadas que atendem às necessidades específicas de cada cliente, garantindo eficiência e precisão na coleta de dados em qualquer cenário.</li>
+                    <li><strong>Eficiência na Coleta de Dados:</strong> A implementação precisa dessas funções resulta em aplicações ágeis e responsivas, cruciais para operações de coleta de dados em tempo real, inventário e logística - áreas onde a DOTHINK possui extensa experiência e expertise.</li>
+                    <li><strong>Integração Perfeita com Protheus:</strong> A integração seamless das soluções VT100 com o ecossistema Protheus permite estender as funcionalidades do ERP para dispositivos móveis de coleta, um aspecto que nossa <a href=https://dothink.com.br/fabrica-de-software.html><strong>fábrica de software</strong></a> prioriza em cada projeto de automação.</li>
+                    <li><strong>Boas Práticas para Soluções Móveis:</strong>Adotar código limpo e seguir as melhores práticas não só melhora a qualidade do software para coletores de dados, mas também facilita a manutenção e atualização - princípios fundamentais na fábrica de software da DOTHINK.</li>
+                   </ol>
+                   <p class="post-text">Para saber mais sobre como podemos ajudar sua empresa a maximizar o potencial do Protheus com soluções VT100 personalizadas para coletores de dados e microterminais, entre em <a href=#contact>contato</a> para uma consultoria especializada em soluções de mobilidade e coleta de dados.</p>              
+                </div>                      
+              </div>
+
+              <!--tags panel-->
+              <div class="tags panel">
+                <ul class="sidebar-list tags-list ">
+                  <li class="tags-icon-label "><i class="fas fa-tags icon"></i></li>
+                  <li class="tag-item"><a class="tag-link" href="automacao-e-coleta-de-dados-protheus.html">Sigaacd</a></li>
+                  <li class="tag-item"><a class="tag-link" href="consultoria-protheus.html">Consultoria Protheus</a></li>
+                  <li class="tag-item"><a class="tag-link" href="fabrica-de-software.html">Fábrica de Software</a></li>
+                </ul>
+              </div>
+              <!--author profile panel-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End _post -->
+    <!-- Start  page-footer Section-->
+    <footer class="page-footer dark-color-footer" id="page-footer">
+      <div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/footer-bg-1.jpg" data-bg-opacity=".25"></div>
+      <div class="container">
+        <div class="row footer-cols">
+          <div class="col-12 col-md-8 col-lg-4  footer-col "><img class="img-fluid footer-logo" loading="lazy" src="assets/images/logo/logo-colored.png" alt="logo"/>
+            <div class="footer-col-content-wrapper">        
+              <p class="footer-text-about-us ">
+                Transforme seu negócio com a DO THINK. Onde a inovação encontra a expertise em TOTVS Protheus. Juntos, construímos o futuro da sua empresa.                
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2 footer-col ">
+            <h2 class=" footer-col-title    ">Recursos</h2>
+            <div class="footer-col-content-wrapper">
+              <ul class="footer-menu">
+                <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#0">suporte</a>
+                </li>
+                <li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#0">acesso consultor</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12     col-lg-4 footer-col ">
+            <h2 class=" footer-col-title    ">Informações de Contato</h2>
+            <div class="footer-col-content-wrapper">       
+              <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase  info" href="mailto:contato@dothink.com.br">contato@dothink.com.br</a></div>
+              <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="info">Av. Brigadeiro Faria Lima, 2369, Conj. 1102 - Jardim Paulistano - São Paulo - Brasil</span></div>
+              <div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info" href="tel:+20123456789">+20123456789  </a></div>
+              <div class="contact-info-card">
+                <div class="social-icons">
+                  <div class="sc-wrapper dir-row sc-size-32">
+                    <ul class="sc-list">
+                      <li class="sc-item " title="Facebook"><a class="sc-link" href="https://www.facebook.com/profile.php?id=61561498754254" title="DO THINK no Facebook"><i class="fab fa-facebook-f sc-icon"></i></a></li>
+                      <li class="sc-item " title="youtube"><a class="sc-link" href="#0" title="social media icon"><i class="fab fa-youtube sc-icon"></i></a></li>
+                      <li class="sc-item " title="instagram"><a class="sc-link" href="https://www.instagram.com/dothink_erp/?igsh=Z2hmeGsxZTI0NHE5" title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
+                      <li class="sc-item " title="X"><a class="sc-link" href="https://twitter.com/DoThink3" title="DO THINK no X"><i class="fab fa-x-twitter sc-icon"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 d-flex justify-content-start">
+              <p class="creadits">
+                 
+                
+                &copy; 2025
+                Criado por:                
+                           <a class="link" href="#0">DO THINK</a>
+                           Todos os direitos reservados. Protheus, ADVPL, TOTVS são produtos e marca registrada de propriedade da TOTVS S.A. Logotipos TOTVS e Microsiga são de propriedade da TOTVS S.A. O DO THINK é um site independente e não tem vínculo com a TOTVS, ou qualquer uma de suas franquias ou representantes.
+              </p>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-end">
+              <div class="terms-links"><a href="termo-uso.html">Termo de Uso </a>
+                | <a href="politica-privacidade.html">Política de Privacidade.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End  page-footer Section-->
+    <!-- Start loading-screen Component-->
+    <div class="loading-screen" id="loading-screen"><span class="bar top-bar"></span><span class="bar down-bar"></span><span class="progress-line"></span><span class="loading-counter"> </span></div>
+    <!-- End loading-screen Component-->
+    <!-- Start back-to-top Button-->
+    <div class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up icon "></i>
+    </div>
+    <!-- End back-to-top Button-->
+       
+        <!--     JQuery     -->
+        <script src="js/vendors/jquery-3.6.1.min.js"></script>
+        
+        <!--     bootstrap     -->
+        <script src="js/vendors/bootstrap.bundle.min.js"></script>
+        
+        <!--     wow     -->
+        <script src="js/vendors/wow.min.js"></script>
+        
+        <!--     main     -->
+        <script src="js/main.js"></script>
+		<script>
+		 function copyCode(button, cCodCode) {
+		     var code = document.getElementById(cCodCode).innerText;
+		     navigator.clipboard.writeText(code).then(function() {
+		         button.innerText = 'Copiado';
+		         button.classList.add('copied');
+		         setTimeout(function() {
+		             button.innerText = 'Copiar';
+		             button.classList.remove('copied');
+		         }, 2000);
+		     });
+		 }
+		 
+		 // Definindo a sintaxe ADVPL para Prism.js
+		 Prism.languages['advpl'] = {
+		     'comment': [ { pattern: /(^|[^\\])\/\*[\s\S]*?\*\//, lookbehind: true }, { pattern: /\/\/.*/, greedy: true } ],
+		     'string': /"(\\.|[^"\\])*"/,
+		     'keyword': /\b(?:User|Static|End|EndIf|Function|Local|If|ElseIf|Else|For|Next|Return|While|EndDo|Exit|VALID|WHEN|PICT)\b/,
+		     'operator': /(?:=|<|>|<=|>=|!=|==|:=|.or.|.and.|\|\||\+|-|\*|\/)/,
+		     'number': /(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/i,
+		     'identifier': /(?:\w+)/
+		 };
+		</script>        
+  </body>
+</html>

@@ -424,35 +424,855 @@ MSCBSAYBAR(08, 10, aConteudo, "N", "MB07", 10, .F., .T., .F., "C", 2, 1, .F.)</c
 
           <h2 id="otimizacao-diferentes-fabricantes-imp">Otimização para Diferentes Fabricantes de Impressoras</h2>
           <p>Embora o <strong>ADVPL</strong> abstraia muitas diferenças entre fabricantes, é crucial entender algumas particularidades:</p>
-          <menu>
-              <li><strong>Zebra (ZPL):</strong> O ponto de origem está no canto superior esquerdo.</li>
-              <li><strong>Datamax (DPL):</strong> O ponto de origem está no canto inferior esquerdo.</li>
-              <li><strong>Intermec (IPL):</strong> Similar ao Zebra, mas com algumas diferenças no sistema de coordenadas.</li>
-          </menu>
+          <ul class="post-list">
+            <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">Zebra (ZPL):</span> O ponto de origem está no canto superior esquerdo.</span></li>
+            <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">Datamax (DPL):</span> O ponto de origem está no canto inferior esquerdo.</span></li>
+            <li class="post-list-item"><i class="bi bi-check2-circle icon"></i><span class="post-list-text"><span class="featured-text">Intermec (IPL):</span> Similar ao Zebra, mas com algumas diferenças no sistema de coordenadas.</span></li>
+          </ul>          
           <p>Conhecer essas nuances é fundamental para criar layouts precisos e resolver problemas específicos de cada fabricante.</p>
-          <div class="home_btns">
-              <a href=#contact class="btn btn-primary m-top-20"  role="button">FALE CONOSCO</a>
-              <a href=#idindice  class="btn btn-primary m-top-20"  role="button">Índice</a>
+          <br>
+          <br>
+          <h2 id="melhores-praticas-e-otimizacao-performance">Melhores Práticas e Otimização de Performance</h2>
+          <p>Embora o <strong>ADVPL</strong> abstraia muitas diferenças entre fabricantes, é crucial entender algumas particularidades:</p>
+          <div class="info-items-list">
+            <div class="row">
+              <div class="col-12 col-md-6 ">
+                <div class="info-item"><span class="info-number ">01.</span>
+                  <div class="info-content">
+                    <h5 class="info-title">Utilização de Variáveis</h5>
+                    <p class="info-text">A função `MSCBVar` permite criar variáveis para elementos que mudam frequentemente, melhorando significativamente a eficiência da impressão.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 ">
+                <div class="info-item"><span class="info-number ">02.</span>
+                  <div class="info-content">
+                    <h5 class="info-title">Gerenciamento de Memória</h5>
+                    <p class="info-text">Use o parâmetro `nMemoria` em `MSCBPrinter` para otimizar o uso de memória da impressora, especialmente importante em ambientes de alto volume, e se drive windows estiver desabilitado (caso contrário será o windows que administrará a memória).</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 ">
+               <div class="info-item"><span class="info-number ">03.</span>
+                 <div class="info-content">
+                   <h5 class="info-title">Testes Extensivos</h5>
+                   <p class="info-text">Devido às variações entre modelos de impressoras, é crucial testar seu código em diversas configurações e cenários.</p>
+                 </div>
+               </div>
+             </div>
+             <div class="col-12 col-md-6 ">
+               <div class="info-item"><span class="info-number ">04.</span>
+                 <div class="info-content">
+                   <h5 class="info-title">Documentação Detalhada</h5>
+                   <p class="info-text">Mantenha uma documentação clara e abrangente, especialmente ao lidar com layouts complexos de etiquetas ou integrações avançadas.</p>
+                 </div>
+               </div>
+             </div>                                     
+             <p>Conhecer essas nuances é fundamental para criar layouts precisos e resolver problemas específicos de cada fabricante.</p>                                         
+            </div>
+            
+
+          </div>          
+          <br>
+          <h2 id="Funcoes-advpl-imp-termica">Funções ADVPL para Etiquetas Térmicas</h2>
+          <p>Segue abaixo funções <strong>ADVPL</strong> para etiquetas térmicas:</p>
+          
+          <h3 id="MSCBPrinter">1. MSCBPrinter (Configuração da Impressora)</h3>
+          <p><strong><em>Objetivo:</em></strong></p>
+          <p><strong><em>            </em></strong>Permite realizar as configurções da impressora, as quais permitirão ao programador determinar as caracteristicas de impressão, definidas pelos parâmetros abaixo.</p>
+          <p><strong><em>Sintaxe:</em></strong></p>
+          <p>MSCBPRINTER(cModelPrt, cPorta, nDensidade, nTamanho, lSrv, nPorta, cServer, cEnv, nMemoria, cFila, lDrvWin, cPathSpool)</p>
+          <br>
+          <p>Já vimos anteriormente os detalhes dos parâmetros da função MSCBPrinter, <a href="#configuracao-inicial-e-preparacao"><strong>clique aqui</strong></a>  para mais detalhes.</p>
+          
+          <div class="code-container">
+              <div class="code-header">
+                  <h4>MSCBPrinter (Configuração da Impressora)</h4>
+                  <button class="copy-button" onclick="copyCode(this, 'code4')">Copiar</button>
+              </div>
+              <pre><code id="code4" class="language-advpl">User Function ConfigImpressora()
+   Local cModelo := "ZEBRA"
+   Local cPorta  := "LPT1"
+   Local nDensidade := 203 // DPI
+   Local nTamanho := 100 // mm
+
+   MSCBPRINTER(cModelo, cPorta, nDensidade, nTamanho, .F.)
+   
+   // Outras configurações...
+   
+   MSCBCHKSTATUS(.T.) // Ativa verificação de status
+Return</code></pre>
           </div>
           <br>
-          <br>
+          <h3 id="MSCBClosePrinter">2. MSCBClosePrinter (Finaliza a conexão com a impressora)</h3>
+          <p><strong><em>Objetivo:</em></strong></p>
+          <p>Finaliza a conexão com a impressora.</p>
+          <p><strong><em>Sintaxe:</em></strong></p>
+          <p>MSCBClosePrinter()</p>
+          <p><strong><em>Exemplo usando o padrão de programação Zebra (família ZPL):</em></strong></p>
+          <div class="code-container">
+              <div class="code-header">
+                  <h4>MSCBClosePrinter (Finaliza a conexão com a impressora)</h4>
+                  <button class="copy-button" onclick="copyCode(this, 'code5')">Copiar</button>
+              </div>
+              <pre><code id="code5" class="language-advpl">User Function FinalizaConexao()
+Local cPorta := "COM1:9600,N,8,1"
+Local nx     := 0
 
+MSCBPRINTER("S500-8", cPorta, , 40, .F.)
+
+   For nx:=1 to 3
+      MSCBBEGIN(1, 6)
+
+      MSCBSAY(10, 06, "CODIGO", "N", "A", "015,008")
+      MSCBSAY(33, 09, Strzero(nX, 10), "N", "0", "032,035")
+      MSCBSAY(05, 17, "IMPRESSORA ZEBRA S500-8", "N", "0", "020,030")
+
+      MSCBEND()
+   Next nx
+
+MSCBCLOSEPRINTER() // Finaliza Conexao
+
+Return</code></pre>
+          </div>
+          <br>
+          <h3 id="MSCBBegin">3. MSCBBegin (Início da Etiqueta)</h3>
+          <p><strong><em>Objetivo:</em></strong></p>
+          <p>Inicializa a montagem da imagem para cada etiqueta.</p>
+          <p><strong><em>Sintaxe:</em></strong></p>
+          <p><strong><em> </em></strong>MSCBBEGIN(nxQtde,nVeloc,nTamanho,lSalva)</p>
+          <p>&nbsp;</p>
+          <table>
+          <tbody>
+          <tr>
+          <td width="103"><strong>Parâmetros</strong></td>
+          <td width="519"><strong>Descrição                                                                                                            </strong></td>
+          </tr>
+          <tr>
+          <td width="103"><strong>[nQtde]   </strong></td>
+          <td width="519">Quantidade de cópias</td>
+          </tr>
+          <tr>
+          <td width="103"><strong>[nVeloc]  </strong></td>
+          <td width="519">Velocidade (1,2,3,4,5,6) polegadas por segundo</td>
+          </tr>
+          <tr>
+          <td width="103"><strong>[nTamanho]</strong></td>
+          <td width="519">Tamanho da etiqueta em Milímetros.</td>
+          </tr>
+          <tr>
+          <td width="103"><strong>[lSalva]</strong></td>
+          <td width="519">Variável utilizada somente para definição de form´s. O valor default da variável é .f.</td>
+          </tr>
+          </tbody>
+          </table>
+          <p><strong><em>Exemplo:</em></strong></p>
+          <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBBegin (Início da Etiqueta)</h4>
+                <button class="copy-button" onclick="copyCode(this, 'code6')">Copiar</button>
+            </div>
+            <pre><code id="code6" class="language-advpl">User Function IniciaEtiqueta()
+   Local nCopias := 1
+   Local nVelocidade := 3 // Velocidade de impressão
+
+   MSCBBEGIN(nCopias, nVelocidade)
+   
+   // Conteúdo da etiqueta será adicionado aqui...
+Return</code></pre>
+        </div>
+        <br>
+        <h3 id="MSCBEnd">4. MSCBEnd</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Finaliza a montagem da imagem, que foi inicializada por um “MSCBBegin( )”.</p>
+        
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBEND()</p>
+        <p><strong><em>Exemplo:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBEnd (Finalizar Etiqueta)</h4>
+                <button class="copy-button" onclick="copyCode(this, 'code7')">Copiar</button>
+            </div>
+            <pre><code id="code7" class="language-advpl">User Function FinalizaEtiqueta()
+   MSCBEND()
+Return</code></pre>
+        </div>
+        <br>
+        <h3 id="MSCBSay">5. MSCBSay (Imprimir Texto)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime uma string.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBSAY(nXmm, nYmm, cTexto, cRotacao, cFonte, cTam, lReverso, lSerial, cIncr, lZerosL, lNoAlltrim)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103">
+            <strong>nXmm</strong>
+        </td>
+        <td width="519">Posição X em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nYmm</strong></td>
+        <td width="519">Posição Y em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cTexto</strong></td>
+        <td width="519">String a ser impresso ou itens especificando uma variável “@”.(Ex: “@2”).</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="459">Obs: quando for especificado uma variável, o seu conteúdo deverá ser apenas o caractere “@” seguido de um número, “@1” ou “@2” e assim por diante. Vide item 15.</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cRotação</strong></td>
+        <td width="519">String com o tipo de Rotação (N,R,I,B):</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="64"><strong>Instrução</strong></td>
+        <td width="204"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="64">N</td>
+        <td width="204">Normal</td>
+        </tr>
+        <tr>
+        <td width="64">R</td>
+        <td width="204">Cima para baixo</td>
+        </tr>
+        <tr>
+        <td width="64">I</td>
+        <td width="204">Invertido</td>
+        </tr>
+        <tr>
+        <td width="64">B</td>
+        <td width="204">Baixo para cima</td>
+        </tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cFonte</strong></td>
+        <td width="519">String com os tipos de Fonte:</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="76"><strong>Padrão</strong></td>
+        <td width="348"><strong>Tipos</strong></td>
+        </tr>
+        <tr>
+        <td width="76">Zebra</td>
+        <td width="348">(A,B,C,D,E,F,G,H,0) 0(zero)- fonte escalar</td>
+        </tr>
+        <tr>
+        <td width="76">Datamax</td>
+        <td width="348">(0,1,2,3,4,5,6,7,8,9) 9 – fonte escalar</td>
+        </tr>
+        <tr>
+        <td width="76">Eltron</td>
+        <td width="348">(0,1,2,3,4,5)</td>
+        </tr>
+        <tr>
+        <td width="76">Intermec</td>
+        <td width="348">(0,1,7,20,21,22,27)</td>
+        </tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cTam</strong></td>
+        <td width="519">String com o tamanho da Fonte</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>*[lReverso]</strong></td>
+        <td width="519">Imprime  em reverso quando tiver sobre um box preto</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[lSerial]</strong></td>
+        <td width="519">Serializa o código</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[cIncr]   </strong></td>
+        <td width="519">Incrementa quando for serial positivo ou negativo</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>*[lZerosL]</strong></td>
+        <td width="519">Coloca zeros a esquerda no numero serial</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[lNoAlltrim]</strong></td>
+        <td width="519">Permite brancos a esquerda e direita</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p><strong><em>Exemplo usando o padrão de programação Zebra (família ZPL):</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBSay (Imprimir Texto)</h4>
+                <button class="copy-button" onclick="copyCode(this, 'code8')">Copiar</button>
+            </div>
+            <pre><code id="code8" class="language-advpl">User Function ImprimeTexto()
+   Local cTexto := "Produto: Widget XYZ"
+   Local nX := 10, nY := 15
+   Local cRotacao := "N" // Normal
+   Local cFonte := "A"
+   Local cTamanho := "020,010"
+
+   MSCBSAY(nX, nY, cTexto, cRotacao, cFonte, cTamanho)
+Return</code></pre>
+        </div>
+        <br>
+        
+        <h3 id="MSCBSayBar">6. MSCBSayBar (Imprimir Código de Barras)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime código de barras.</p>
+        <p><strong><em> </em></strong></p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBSAYBAR(nXmm, nYmm, cConteudo, cRotacao, cTypePrt, nAltura, lDigVer, lLinha, lLinBaixo, cSubSetIni, nLargura, nRelacao, lCompacta, lSerial, cIncr, lZerosL)</p>
+        <p><strong><em> </em></strong></p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="111"><strong>Parâmetro</strong></td>
+        <td width="512"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="111"><strong>nXmm</strong></td>
+        <td width="512">Posição X em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>nYmm</strong></td>
+        <td width="512">Posição Y em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>cConteudo</strong></td>
+        <td width="512">String a ser impressa especificando uma variável “@” ou array somente quando o parâmetro <u>cTypePrt</u> for igual á MB07.</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="496"><strong>Definição do Array:</strong></td>
+        </tr>
+        <tr>
+        <td width="496">cConteudo :={{&#8220;01&#8243;,&#8221;07893316010411&#8221;},;</p>
+        <p>{&#8220;10&#8221;,&#8221;0000970100&#8243;+<strong>MSCB128B()</strong>+&#8221;1&#8243;+<strong>MSCB128C()</strong>},;</p>
+        <p>{&#8220;37&#8243;,&#8221;0004&#8221;},;</p>
+        <p>{&#8220;21&#8243;,&#8221;000494&#8221;}}</p>
+        <ul>
+        <li>A possição 1 do array (ex: “01”) informa o AI utilizadado (que será visto no item 3.6.1. “Utilização do código de barras  128”).</li>
+        <li>Já a possição 2 do array (ex: &#8220;07893316010411”) é o conteúdo do AI.</li>
+        </ul>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>cRotação</strong></td>
+        <td width="512">String com o tipo de Rotação:</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="87"><strong>Instrução</strong></td>
+        <td width="234"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="87">N</td>
+        <td width="234">Normal</td>
+        </tr>
+        <tr>
+        <td width="87">R</td>
+        <td width="234">Cima para baixo</td>
+        </tr>
+        <tr>
+        <td width="87">I</td>
+        <td width="234">Invertido</td>
+        </tr>
+        <tr>
+        <td width="87">B</td>
+        <td width="234">Baixo para cima</td>
+        </tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+        <tr>
+        <td width="111"><strong>cTypePrt</strong></td>
+        <td width="512">String com o Modelo de Código de Barras:</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="87"><strong>Instrução</strong></td>
+        <td width="234"><strong>Modelo de Código de Barras</strong></td>
+        </tr>
+        <tr>
+        <td width="87">MB01</td>
+        <td width="234">Interleaved 2 of 5</td>
+        </tr>
+        <tr>
+        <td width="87">MB02</td>
+        <td width="234">Code 39</td>
+        </tr>
+        <tr>
+        <td width="87">MB03</td>
+        <td width="234">EAN 8</td>
+        </tr>
+        <tr>
+        <td width="87">MB04</td>
+        <td width="234">EAN 13</td>
+        </tr>
+        <tr>
+        <td width="87">MB05</td>
+        <td width="234">UPC A</td>
+        </tr>
+        <tr>
+        <td width="87">MB06</td>
+        <td width="234">UPC E</td>
+        </tr>
+        <tr>
+        <td width="87">MB07</td>
+        <td width="234">CODE 128</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong>Obs:</strong> Caso o leitor queira utilizar o modelo do padrão de programação da impressora, o mesmo deverá consultar documentação do fabricante.</p>
+        <p>&nbsp;</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[nAltura]</strong></td>
+        <td width="512">Altura do código de Barras em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>*[ lDigver]</strong></td>
+        <td width="512">Imprime dígito de verificação</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[lLinha]    </strong></td>
+        <td width="512">Imprime a linha de código</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>*[lLinBaixo]</strong></td>
+        <td width="512">Imprime a linha de código acima das barras</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[cSubSetIni]</strong></td>
+        <td width="512">Utilizado no code128</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[nLargura]  </strong></td>
+        <td width="512">Largura da barra mais fina em pontos default 3</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[nRelacao]</strong></td>
+        <td width="512">Relação entre as barras finas e grossas em pontos default 2</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[lCompacta]</strong></td>
+        <td width="512">Parâmetro fora de uso.</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[lSerial]</strong></td>
+        <td width="512">Serializa o código</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[cIncr]   </strong></td>
+        <td width="512">Incrementa quando for serial positivo ou negativo</td>
+        </tr>
+        <tr>
+        <td width="111"><strong>[lZerosL]</strong></td>
+        <td width="512">Coloca Zeros a esquerda do conteúdo. Este parâmetro só é valido quando lSerial estiver ativado (.t.).</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p><strong><em>Exemplo usando o padrão de programação Zebra (família ZPL):</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBSayBar (Imprimir Código de Barras)</h4>
+                <button class="copy-button" onclick="copyCode(this, 'code9')">Copiar</button>
+            </div>
+            <pre><code id="code9" class="language-advpl">User Function ImprimeCodigoBarras()
+   Local cConteudo := "7891234567890"
+   Local nX := 20, nY := 30
+   Local cTipo := "EAN13"
+   Local nAltura := 15
+   Local lDigVerif := .T.
+   Local lLinha := .T.
+
+   MSCBSAYBAR(nX, nY, cConteudo, "N", cTipo, nAltura, lDigVerif, lLinha)
+Return</code></pre>
+        </div>
+        <br>
+        
+        <h3 id="MSCBBox">7. MSCBBox (Desenhar Caixa)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime um box.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBBOX(nX1mm, nY1mm, nX2mm, nY2mm, nExpessura, cCor)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nX1mm</strong></td>
+        <td width="519">Posição X1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nY1mm</strong></td>
+        <td width="519">Posição Y1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nX2mm</strong></td>
+        <td width="519">Posição X2 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nY2mm</strong></td>
+        <td width="519">Posição Y2 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[nEspessura]</strong></td>
+        <td width="519">Numero com a espessura em pixel</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>*[cCor]     </strong></td>
+        <td width="519">String com a Cor Branca ou Preta  (&#8220;W&#8221; ou &#8220;B&#8221;)</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p><strong><em>Exemplo:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBBox (Desenhar Caixa)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code10')">Copiar</button>
+            </div>
+            <pre><code id="code10" class="language-advpl">User Function DesenhaCaixa()
+   Local nX1 := 5, nY1 := 5
+   Local nX2 := 95, nY2 := 45
+   Local nEspessura := 1
+
+   MSCBBOX(nX1, nY1, nX2, nY2, nEspessura)
+Return</code></pre>
+        </div>
+        <br>
+        
+        <h3 id="MSCBLineH">8. MSCBLineH (Imprime Linha Horizontal)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime uma linha horizontal.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBLineH(nX1mm, nY1mm, nX2mm, nExpessura, cCor)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nX1mm</strong></td>
+        <td width="519">Posição X1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nY1mm</strong></td>
+        <td width="519">Posição Y1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nX2mm</strong></td>
+        <td width="519">Posição X2 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[nEspessura]</strong></td>
+        <td width="519">Numero com a espessura em pixel</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>*[cCor]     </strong></td>
+        <td width="519">String com a Cor Branca ou Preta  (&#8220;W&#8221; ou &#8220;B&#8221;)</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Exemplo:</em></strong></p>
+        
+        
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBLineH (Imprime Linha Horizontais)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code11')">Copiar</button>
+            </div>
+            <pre><code id="code11" class="language-advpl">User Function LinhaHorizontal()
+   // Linha Horizontal
+   MSCBLINEH(10, 20, 90, 2)
+Return</code></pre>
+        </div>
+        <br>
+        
+        <h3 id="MSCBLineV">9. MSCBLineV (Imprime Linha Vertical)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime uma linha vertical.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBLineV(nX1mm, nY1mm, nY2mm, nExpessura, cCor)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nX1mm</strong></td>
+        <td width="519">Posição X1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nY1mm</strong></td>
+        <td width="519">Posição Y1 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>nY2mm</strong></td>
+        <td width="519">Posição X2 em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>[nEspessura]</strong></td>
+        <td width="519">Numero com a espessura em pixel</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>*[cCor]       </strong></td>
+        <td width="519">String com a Cor Branca ou Preta  (&#8220;W&#8221; ou &#8220;B&#8221;)</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Exemplo:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBLineV (Imprime Linha Vertical)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code12')">Copiar</button>
+            </div>
+            <pre><code id="code12" class="language-advpl">User Function LinhaVertical()   
+   // Linha Vertical
+   MSCBLINEV(50, 10, 40, 2)
+Return</code></pre>
+        </div>
+        <br>
+        <h3 id="MSCBLoadGraf">10. MSCBLoadGraf (Carrega Imagem na Memória da Impressora)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Carrega uma imagem para memória da impressora.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBLOADGRF(cImagem)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cImagem</strong></td>
+        <td width="519">Nome do arquivo que será carregado, inclusive o path + nome completo + extensão</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Observações:</em></strong></p>
+        <menu>
+            <li>Para o padrão <strong>Zebra</strong>, o arquivo do gráfico (cImagem) tem que ser do tipo GRF, gerado através de um PCX ou TIF no software fornecido pelo fabricante da zebra.</li>
+            <li>Para o padrão <strong>Intermec</strong>, o arquivo do gráfico (cImagem) tem que ser do tipo UDC, gerado através de um BMP ou TIF (não compactado) no software fornecido pelo fabricante da intermec.</li>
+            <li>Para o padrão <strong>Datamax</strong>, o arquivo do gráfico pode ser do tipo BMP, PCX, não sendo necessário ser convertido.</li>
+            <li>Para o padrão <strong>Eltron</strong>, o arquivo do gráfico tem que ser do tipo PCX, não sendo necessário ser convertido.</li>
+        </menu>
+        <br>
+        <p><strong><em>Exemplo do código usando o padrão de programação ZPL:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBLoadGraf (Carrega Imagem na Memória da Impressora)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code13')">Copiar</button>
+            </div>
+            <pre><code id="code13" class="language-advpl">User Function ImprimeImagem()
+   Local cNomeImagem := "LOGO"
+   Local nX := 5, nY := 5
+
+   MSCBLOADGRF("LOGO.GRF") // Carrega a imagem
+   MSCBGRAFIC(nX, nY, cNomeImagem)
+Return</code></pre>
+        </div>
+        <br>
+        <h3 id="MSCBGraphic">11. MSCBGraphic (Imprimir Imagem)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Imprime gráfico que está armazenado na memória da impressora.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBGRAFIC(nXmm, nYmm, cArquivo, lReverso)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="91"><strong>Parâmetro</strong></td>
+        <td width="531"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="91"><strong>NXmm</strong></td>
+        <td width="531">Posição X em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="91"><strong>NYmm</strong></td>
+        <td width="531">Posição Y em Milímetros</td>
+        </tr>
+        <tr>
+        <td width="91"><strong>cArquivo</strong></td>
+        <td width="531">Nome do gráfico que foi carregado na memória da impressora (não colocar a extensão do arquivo)</td>
+        </tr>
+        <tr>
+        <td width="91"><strong>*[lReverso]</strong></td>
+        <td width="531">Imprime  em reverso quando tiver  sobre um box preto</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Exemplo usando o padrão de programação ZPL:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBGrafic (Imprimir Imagem)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code14')">Copiar</button>
+            </div>
+            <pre><code id="code14" class="language-advpl">User Function ImprimeImagem()
+   Local cNomeImagem := "LOGO"
+   Local nX := 5, nY := 5
+
+   MSCBLOADGRF("LOGO.GRF") // Carrega a imagem
+   MSCBGRAFIC(nX, nY, cNomeImagem)
+Return</code></pre>
+        </div>
+        <br>
+        
+        <h3 id="MSCBWrite">12. MSCBWrite  (Comando Direto para Impressora)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Permite enviar para impressora uma linha de programação nativa.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBWrite(cConteudo)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103">
+        <strong>Parâmetro</strong>
+        </td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103">
+        <strong>cConteudo</strong>
+        </td>
+        <td width="519">Linha de programação nativa da impressora.</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Exemplo usando o padrão de programação Zebra (família ZPL):</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBWrite (Comando Direto para Impressora)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code15')">Copiar</button>
+            </div>
+            <pre><code id="code15" class="language-advpl">User Function ComandoDireto()
+   // Exemplo para Zebra (ZPL)
+   MSCBWRITE("^XA^FO50,50^A0N,30,30^FDHello World^FS^XZ")
+Return</code></pre>
+        </div>
+        <p><strong>Atenção:</strong> o MSCBWrite é muito poderoso em conjunto com ferramentas como o ZebraDesigner e BarTender, que são ferramentas de desenho e geração de etiquetas de código de barras, além do Labelary(Em outro blog irei detalhar como o Labelary poderá ser útil pre-visualização das etiquetas no dia a dia).</p>
+        <br>
+        
+        <h3 id="MSCBInfoEti">13. MSCBInfoEti (Informações da Etiqueta)</h3>
+        <p><strong><em>Objetivo:</em></strong></p>
+        <p>Grava informações para gerenciamento do MSCBSpool.</p>
+        <p><strong><em>Sintaxe:</em></strong></p>
+        <p>MSCBInfoEti(cDescr,cFiltro)</p>
+        <table>
+        <tbody>
+        <tr>
+        <td width="103"><strong>Parâmetro</strong></td>
+        <td width="519"><strong>Descrição</strong></td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cDescr </strong></td>
+        <td width="519">Descrição que gerará informação no MSCBSpool para identificar a etiqueta.</td>
+        </tr>
+        <tr>
+        <td width="103"><strong>cFiltro</strong></td>
+        <td width="519">É utilizado para realizar filtros no MSCBSpool. Vide documentação MSCBSpool.</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><strong><em>Exemplo:</em></strong></p>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>MSCBInfoEti (Informações da Etiqueta)</h4>
+                <button class="copy-button" onclick="copyCode(this,'code16')">Copiar</button>
+            </div>
+            <pre><code id="code16" class="language-advpl">User Function InfoEtiqueta()
+   Local cDescricao := "Etiqueta de Produto"
+   Local cFiltro := "PROD001"
+
+   MSCBInfoEti(cDescricao, cFiltro)
+Return</code></pre>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="code-container">
+            <div class="code-header">
+                <h4>Exemplo Completo Integrando Várias Funções:</h4>
+                <button class="copy-button" onclick="copyCode(this,'code17')">Copiar</button>
+            </div>
+            <pre><code id="code17" class="language-advpl">User Function ImprimirEtiquetaCompleta()
+   Local cCodProd := "PROD001"
+   Local cDescProd := "Widget XYZ"
+   Local cCodBarras := "7891234567890"
+
+   // Configurar impressora
+   MSCBPRINTER("ZEBRA", "LPT1", 203, 100, .F.)
+
+   // Iniciar etiqueta
+   MSCBBEGIN(1, 3)
+
+   // Desenhar caixa
+   MSCBBOX(5, 5, 95, 45, 1)
+
+   // Imprimir textos
+   MSCBSAY(10, 10, "Código: " + cCodProd, "N", "A", "012,008")
+   MSCBSAY(10, 20, "Descrição: " + cDescProd, "N", "A", "012,008")
+
+   // Imprimir código de barras
+   MSCBSAYBAR(20, 30, cCodBarras, "N", "EAN13", 15, .T., .T.)
+
+   // Imprimir logo
+   MSCBLOADGRF("LOGO.GRF")
+   MSCBGRAFIC(70, 5, "LOGO")
+
+   // Finalizar e imprimir etiqueta
+   MSCBEND()
+
+   // Fechar conexão com a impressora
+   MSCBCloseprinter()
+Return</code></pre>
+        </div>
+        <p>Este conjunto de exemplos demonstra como utilizar as principais funções ADVPL para impressão de etiquetas térmicas. Cada função desempenha um papel específico na criação de uma etiqueta completa, desde a configuração da impressora até a impressão final e fechamento da conexão.</p>
+        <p>Para empresas que buscam implementar soluções avançadas de etiquetagem ou otimizar seus processos existentes, contar com uma <a href=https://dothink.com.br>DO THINK</a> especializada pode ser extremamente benéfico. Especialistas podem ajudar a personalizar essas funções para atender às necessidades específicas do negócio, garantindo eficiência e precisão na geração de etiquetas.</p>
+        <br>
+        
+        </div>          
 
 
             </div>
           
                 <div class="part">
-                  <h2 class="post-heading">Conclusão: Dominando VT100 em ADVPL com a DOTHINK</h2>
-                  <p class="post-text">Ao longo deste guia abrangente, exploramos o universo da programação VT100 em ADVPL, uma habilidade essencial para desenvolvedores que trabalham com o TOTVS Protheus. Como especialistas em VT100 na <a href=https://dothink.com.br/consultoria-protheus.html><strong>consultoria Protheus DO THINK</strong></a> entendemos a importância crucial dessas técnicas para o desenvolvimento de soluções eficientes e robustas.</p>
-                  <p class="post-text">Recapitulando os pontos-chave:</p>
-                  <ol>
-                    <li><strong>Versatilidade em Coletores de Dados e Microterminais:</strong> As funções VT100 oferecem um conjunto poderoso de ferramentas para criar interfaces eficientes em diversos modelos de coletores de dados e microterminais. Esta versatilidade permite que desenvolvedores criem soluções adaptáveis a diferentes ambientes operacionais, desde armazéns e linhas de produção até operações de campo. Na <a href="https://dothink.com.br/fabrica-de-software.html"><strong>fábrica de sofware</strong></a> da DOTHINK, aproveitamos essa flexibilidade para desenvolver aplicações personalizadas que atendem às necessidades específicas de cada cliente, garantindo eficiência e precisão na coleta de dados em qualquer cenário.</li>
-                    <li><strong>Eficiência na Coleta de Dados:</strong> A implementação precisa dessas funções resulta em aplicações ágeis e responsivas, cruciais para operações de coleta de dados em tempo real, inventário e logística - áreas onde a DOTHINK possui extensa experiência e expertise.</li>
-                    <li><strong>Integração Perfeita com Protheus:</strong> A integração seamless das soluções VT100 com o ecossistema Protheus permite estender as funcionalidades do ERP para dispositivos móveis de coleta, um aspecto que nossa <a href=https://dothink.com.br/fabrica-de-software.html><strong>fábrica de software</strong></a> prioriza em cada projeto de automação.</li>
-                    <li><strong>Boas Práticas para Soluções Móveis:</strong>Adotar código limpo e seguir as melhores práticas não só melhora a qualidade do software para coletores de dados, mas também facilita a manutenção e atualização - princípios fundamentais na fábrica de software da DOTHINK.</li>
-                   </ol>
-                   <p class="post-text">Para saber mais sobre como podemos ajudar sua empresa a maximizar o potencial do Protheus com soluções VT100 personalizadas para coletores de dados e microterminais, entre em <a href=#contact>contato</a> para uma consultoria especializada em soluções de mobilidade e coleta de dados.</p>              
-                </div>                      
+                  <h2 class="post-heading" id="conclusao">Conclusão</h2>
+                  <p class="post-text">A impressão de etiquetas com código de barras usando impressoras térmicas, quando combinada com a programação ADVPL no ambiente Protheus, oferece uma solução poderosa e flexível para as necessidades de etiquetagem em diversos setores, o que também facilita o uso de coltores usados pelo SIGAACD e WMS. Com a configuração correta e o uso adequado das funções ADVPL, é possível criar etiquetas de alta qualidade de forma eficiente e confiável.</p>
+                  <p class="post-text">Para empresas que buscam maximizar o potencial de suas operações de impressão de etiquetas e integração com o Protheus, a DO THINK oferece serviços especializados que podem ajudar a otimizar seus processos, aumentar a eficiência e garantir a qualidade consistente na impressão de etiquetas com código de barras.</p>
+                  <p class="post-text">Lembre-se, a chave para um sistema de impressão de etiquetas bem-sucedido está na combinação de hardware de qualidade, software bem configurado e conhecimento especializado. Com a abordagem certa, sua empresa pode transformar a impressão de etiquetas de uma simples tarefa operacional em uma vantagem competitiva significativa.</p>
+                </div>  
+                <br>                    
               </div>
 
               <!--tags panel-->

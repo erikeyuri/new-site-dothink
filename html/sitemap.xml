@@ -32,6 +32,10 @@
   <loc>https://dothink.com.br/automacao-e-coleta-de-dados-protheus.html</loc>
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
   <priority>0.80</priority>
+    <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/mestre-inventario-02.webp</image:loc>
+    <image:title>Fábrica de Sofware</image:title>
+  </image:image> 
 </url>
 <url>
   <loc>https://dothink.com.br/fabrica-de-software.html</loc> 
@@ -42,7 +46,11 @@
   <loc>https://dothink.com.br/202407-conectando-o-power-bi-ao-seu-erp-protheus.html</loc> 
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
   <priority>0.80</priority>
-</url>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/power-bi-protheus-360.webp</image:loc>
+    <image:title>Power BI</image:title>
+  </image:image>
+</url> 
 <url>
   <loc>https://dothink.com.br/implantacao-reimplantacao-totvs-protheus.html/</loc> 
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
@@ -82,22 +90,47 @@
   <loc>https://dothink.com.br/202408-ia-totvs-protheus-customizacoes-erp.html/</loc>
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
   <priority>0.80</priority>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/ia-totvs-protheus-customizacoes-erp-600x400.webp</image:loc>
+    <image:title>IA Totvs</image:title>
+  </image:image>
 </url>
 <url>
   <loc>https://dothink.com.br/202410-programacao-impressoras-termicas-protheus.html/</loc>
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
   <priority>0.80</priority>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/impressora-termica.webp</image:loc>
+    <image:title>Programação Impressoras Termicas</image:title>
+  </image:image>
 </url>
 <url>
   <loc>https://dothink.com.br/202411-vt100-protheus-desenvolvimento.html/</loc> 
   <lastmod>2025-01-13T10:30:00+00:00</lastmod>
   <priority>0.80</priority>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/vt100-advpl-protheus.webp</image:loc>
+    <image:title>VT100</image:title>
+  </image:image> 
 </url>
-
-
-
-
-
+<url>
+  <loc>https://dothink.com.br/202412-mestre-inventario-erp-protheus-guia-completo.html/</loc>
+  <lastmod>2025-01-13T10:30:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/mestre-inventario-02.webp</image:loc>
+    <image:title>Meste Inventario ERP</image:title>
+  </image:image> 
+</url>
+<url>
+  <loc>https://dothink.com.br/protheus-12-1-2410.html/</loc>
+  <lastmod>2025-01-13T10:30:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <image:image>
+    <image:loc>https://dothink.com.br/assets/images/blog/post-images/migracao-versao-totvs-protheus-12-1-2410-do-think.webp</image:loc>
+    <image:title>Protheus 12.1.2410</image:title>
+  </image:image> 
+</url>
 
 
 </urlset>

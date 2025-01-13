@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Suporte</title>
+    <link rel="stylesheet" href="css/meus/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem-vindo ao Suporte DO THINK!</h2>
+                <p class="description description-primary">Acesse sua conta para receber assistência personalizada e suporte técnico.</p>
+                <p class="description description-primary">Estamos aqui para ajudar você a obter o máximo de nossas soluções. Se precisar de ajuda, não hesite em nos contatar!</p>
+            </div>    
+            <div class="second-column">
+                <h4>Informe o seu e-mail de login, para prosseguirmos:</h4>
+                <form class="form" onsubmit="validarEmail(event)">                    
+                    <label class="label-input" for="email">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="email" placeholder="Email">
+                    </label>
+                    
+                    <button class="btn btn-second" type="submit">Avançar</button>  
+                    <p id="mensagem" class="message"></p>      
+                </form>
+            </div><!-- second column -->
+        </div><!-- first content -->
+    </div>
+    <script src="js/meus/app-valid.js"></script> 
+    <script>
+        function validarEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            // Simulação de verificação no banco de dados
+            const emailExiste = false; // Altere para true para simular um e-mail existente
+
+            if (!emailExiste) {
+                document.getElementById('mensagem').innerText = 'E-mail não encontrado. Por favor, verifique e tente novamente.';
+            } else {
+                document.getElementById('mensagem').innerText = '';
+                // Redirecionar ou prosseguir com a lógica desejada
+            }
+        }
+    </script>    
+</body>
+</html>
